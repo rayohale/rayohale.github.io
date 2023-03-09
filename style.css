@@ -1,0 +1,219 @@
+/* rwd CELULAR */
+@media only screen and (max-width: 576px) {
+}
+
+
+/* rwd TABLET */
+@media only screen and (min-width: 577px, max-width: 768px) {
+
+}
+
+
+/* rwd NOTEBOOK [03/03/2023 16:15] */
+@media only screen and (min-width: 992px) {
+
+    /* PARTICULAR */
+    html, body {
+        height: 100%;
+    }
+
+    .contenido {
+        /*width: 72%;*/
+        flex-wrap: wrap;
+        margin-left: 280px;
+        overflow: auto;
+        height: 100vh;
+        flex-grow: all;
+        display: flex;
+    }
+
+    .caja-1 {
+        min-width: 50px;
+        width: 300px;
+        flex-wrap: wrap;
+        margin: 10px;
+        flex-grow: 1;
+        display:flex;
+    }
+    .caja-2 {
+        min-width: 150px;
+        width: 300px;
+        flex-wrap: wrap;
+        margin: 10px;
+        flex-grow: 2;
+        display:flex;
+        flex-basis: 250px;
+    }
+    .caja-3 {
+        min-width: 150px;
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        flex-grow: 3;
+       
+    }
+    .cover img {
+        object-position: 20%;
+        object-fit: cover;
+    }
+/*
+    .foto2 img {
+        max-height: 500px;
+        height: 500px;
+        object-fit: cover;
+        flex-wrap: wrap;
+        background: blue;
+        margin: 10px;
+        flex-grow: 2;
+        display:flex;
+        flex-basis: 250px;
+    }*/
+
+    .foto img {
+        min-height: 500px;
+        object-position: 20%;
+        object-fit: cover;
+        flex-wrap: wrap;
+        margin: 10px;
+        flex-grow: 2;
+        display:flex;
+    }
+
+    .img-final {
+        object-position: 20%;
+        object-fit: cover;
+        min-width: 150px;
+        width: 300px;
+        flex-wrap: wrap;
+        margin: 10px;
+        flex-grow: 2;
+        display:flex;
+        flex-basis: 250px;
+        max-width: 850px;
+    }
+
+    /* COMUN */
+
+    .menu {
+        width: 270px;
+        height: 100%; /*100vh*/
+        display: inline-block; 
+        /* background-color: #aaa; */
+        position: absolute;
+        overflow: auto;
+    }
+    .barra-lateral {
+    display: inline-block;
+    width: 270px;
+    /* height: 100% #### NO ME FUNCA */
+    height: 100%;
+    /* opacity: 20%; */
+    }
+
+    .nombre {
+        font-family: 'Oswald', sans-serif;
+        font-size: 4em;
+        margin: 25px;
+    }
+
+    .opciones {
+        font-family: 'Oswald', sans-serif;
+        font-size:2em;
+        margin: 50% 25px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {color:black;}
+    a:hover {color:gray;}
+    /*
+    .contenido {
+        display: inline-block;
+        width: 300px;
+        height: 100%;
+        background-color: blue;
+        flex-wrap: wrap;
+    }*/
+
+
+
+
+
+
+    /* ########## BIOGRAFIA ########## */
+
+    .biografia {
+        display: flex;
+    }
+
+    .biografia__foto {
+        overflow: auto;
+        width: 50%;
+        
+    }
+
+    .biografia__foto img {
+        height: 100vh;
+        object-fit: cover;
+        
+    }
+
+    .biografia__cuerpo {
+        width: 50%;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.3em;
+    }
+
+    .biografia__cuerpo p,h2 {
+        margin: 40px;
+    }
+
+
+    /* ########### REEL ########### */
+
+    .biografia__video {
+        width: 100%;
+        margin: 100px 50px;
+    }
+
+    h1,h3 {
+        font-family: 'Oswald', sans-serif;
+    }
+/*
+    iframe {
+        width: 700px; 
+        height: 393px; 
+    }
+*/
+
+    /* ########### CONTACTO ########### */
+
+    .contacto__cuerpo {
+        width: 50%;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.3em;
+    }
+
+    .contacto {
+        margin: 70px;
+        margin-top: 420px;
+    }
+
+}
+
+
+
+/* rwd XL */
+@media only screen and (min-width: 1250px) {
+    iframe {
+        width: 900px; 
+        height: 506px; 
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+
+}

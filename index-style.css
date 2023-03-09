@@ -1,0 +1,72 @@
+
+/* rwd CELULAR */
+@media only screen and (max-width: 576px) {
+}
+
+
+/* rwd TABLET */
+@media only screen and (min-width: 577px, max-width: 768px) {
+
+}
+
+/* rwd NOTEBOOK [03/03/2023] */
+@media only screen and (min-width: 992px) {
+    
+    /* No me estaría funcionando el FULL-HEIGHT
+    html, body {
+        height: 100%;
+    }
+    */
+
+    /* OTRA IMAGEN
+    body {
+        background-image: url("cara-1.jpg");
+    }
+    */
+
+    body {
+        background-image: url("foto07.jpg");
+        background-color: black;
+        background-repeat:no-repeat;
+        background-position: 50% 50%;
+        background-size: 30%;
+ 
+    }
+    .barra-lateral {
+    display: inline-block;
+    width: 270px;
+    /* height: 100% #### NO ME FUNCA */
+    height: 1000px;
+    background-color: #fff;
+    /* opacity: 20%; */
+    }
+
+    .nombre {
+        font-family: 'Oswald', sans-serif;
+        font-size: 4em;
+        margin: 25px;
+    }
+
+    .opciones {
+        font-family: 'Oswald', sans-serif;
+        font-size:2em;
+        margin: 50% 25px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    a:visited {color:black;}
+    a:hover {color:gray;}
+
+}
+
+
+/* rwd XL */
+@media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 1400px) {
+
+}
