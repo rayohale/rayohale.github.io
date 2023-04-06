@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width:device-width, initial-scale:1.0">
+    <title>Curriculum Vitae</title>
+    <!-- Alejandro Ruiz De Prada - ruizdalejandro@gmail.com -->
+    <!-- General Rodriguez, Buenos Aires - Argentina (Enero, 2023) -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- ICONOS -->
+    <script src="https://kit.fontawesome.com/aa3ecc03ff.js" crossorigin="anonymous"></script>
+
+    <!-- NAV + RESPONSIVE NAV -->
+    <style>
+        .nav__responsive-ul {
+            display: none;
+        }
+
+        .nav {
+            background: rgb(0, 100, 0);
+        }
+
+        .nav__li {
+            display: inline-block;
+            padding: 12px;
+            color: #fff;
+        }
+
+        .nav__li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav__li i {
+            box-sizing: border-box;
+            text-align: right;
+            margin-right: 5px;
+        }
+
+        .nav__li:hover {
+            color: #bbb;
+        }
+
+        .nav__li:hover > a {
+            color: #bbb;
+        }
+
+
+        .nav__responsive-button-container {
+            position: absolute;
+            width: 100%;
+            font-size: 25px;
+            background-color: #69c;
+            margin-top: -60px;
+            z-index: 100;
+        }
+
+        .nav__responsive-button {
+            padding: 6px 20px;
+            text-align: right;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 580px) {
+            .nav__ul {
+                display: none;
+            }
+
+            .nav {
+                height: 37px;
+                width: 100%;
+                background-color: #69c;
+            }
+
+            .nav__responsive-ul {
+                display: block;
+                position: absolute;
+                width: 100%;
+                margin-top: 37px;
+                padding-top: 23px;
+                height: 37px;
+            }
+
+            .nav__li-container {
+                position: relative;
+                height: 200px; /*calc(100vh - 37px)*/
+                top: -1000px;
+                background-color: #9bf;
+                transition: all 1s;
+                z-index: 1;
+                /*weith: 75%*/
+            }
+
+            .nav__responsive-li {
+                width: 100%;
+                padding: 9px 20px;
+            }
+
+            .nav__responsive-li i {
+                box-sizing: border-box;
+                text-align: center;
+                margin-right: 5px;
+                width: 30px;
+                color: #016;
+            }
+
+            .nav__responsive-li a {
+                color: #016;
+                text-decoration: none;
+            }
+
+            .nav__responsive-ul:hover > .nav__li-container {
+                top: -23px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav"> <!-- 09:00 - 22/10/22 -->
+            <ul class="nav__ul">
+                <li class="nav__li"><i class="fas fa-house"></i><a href="historia.html">Historia</a></li>
+                <li class="nav__li"><i class="fas fa-user"></i><a href="info.html">Información</a></li>
+                <li class="nav__li"><i class="fas fa-circle-info"></i><a href="index.html">Formación</a></li>
+                <li class="nav__li"><i class="fas fa-landmark"></i><a href="diccionario-css.html">Experiencia</a></li>
+                <li class="nav__li"><i class="fas fa-magnifying-glass"></i><a href="index.html">Contacto</a></li>
+            </ul>
+            <ul class="nav__responsive-ul">
+                <div class="nav__responsive-button-container">
+                <div class="nav__responsive-button"><i class="fas fa-bars"></i></div></div>
+                <div class="nav__li-container">
+                    <li class="nav__responsive-li"><i class="fas fa-house"></i></i><a href="historia.html">Historia</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-user"></i><a href="info.html">Información</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-circle-info"></i><a href="index.html">Formación</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-landmark"></i><a href="diccionario-css.html">Experiencia</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-magnifying-glass"></i><a href="index.html">Contacto</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <section style="border:2px solid #016; margin: 3em">
+<!-- ENCUADRAR Y ENMARCAR -->        <article>
+<!-- ARREGLAR IMAGEN + ¿trasladar CSS a archivo externo? -->   <img src="foto.jpg" style="width:300px"">
+            <h3>Alejandro "Jale" Ruiz de Prada</h3>
+            <p>
+                Nace en el año 1991 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptates optio dolor officiis provident dicta ad, fugiat pariatur quos numquam debitis, itaque, obcaecati quas ratione earum magni amet explicabo! Quia.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo corrupti officia natus consectetur id quod fuga, error ab laudantium, soluta, ipsum dicta quam ea? Eveniet praesentium sequi corrupti repellat illum?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit deserunt asperiores tempora fuga inventore, accusantium officia, distinctio maiores aliquid error ipsa iusto aliquam odio culpa! Inventore sunt dolorum veniam illum?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda tempore eligendi eos molestiae dolores necessitatibus similique ab repellat reprehenderit quod, debitis porro neque praesentium est quidem ad esse nobis rem.
+                <section class="info"> <!-- 2. PERFIL PROFESIONAL -->
+                    <h3>Perfil profesional</h3>
+                    Soy una persona perseverante, responsable, proactiva, con buena presencia y con mucha experiencia en relaciones interpersonales debido a mi oficio de Actor, mi experiencia de Camarero. Esto me da una fuerte impronta de una persona capaz y dispuesto a llevar adelante tareas dificiles y desafios.<br>
+                    Tengo muy buena capacidad para el aprendizaje y para trabajar en grupo. El área de servicios es un campo en el que me desenvuelvo muy bien, con una actitud atenta y servil, hábil en la comunicación y en la comprensión de las necesidades del cliente.
+        
+                </section>
+            </p>
+        </article>
+    </section>
+</body>
+</html>
