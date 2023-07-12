@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<!-- CSS -->
+<style type="text/css">
+	
+	.flex-container {
+		display: flex; /* En vez de que estén todas para abajo, las pone una al lado de la otra*/
+		flex-wrap: wrap; /* Se ajustan a la pantalla */
+		justify-content: center;
+		color: #333;
+		font-family: sans-serif;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	.flex-item {
+		flex-grow: 1; /* (...)  */
+		/* flex-basis: 300px;	*/
+		margin: 20px;
+		max-width: 300px; /* Para que se mantenga el tamaño */
+		border: 2px solid #333;
+		padding: 0 20px;
+	}
+	
+	.flex-item:hover {
+		border-color: #71a154;
+		box-shadow: 0px 0px 22px #317124;
+	}
+
+	.flex-item:focus {
+		border-color: #a00;
+		box-shadow: 0px 0px 22px #a00;
+	}
+
+	h2, h3 {
+		margin: 0;
+	}
+	
+	h3 {
+		color: #999;
+	}
+
+	p b {
+		color: #71a154
+	}
+	.llave-img {
+		width: 300px;
+	}
+
+	form {
+		width: 100%;
+		text-align: center;
+		padding: 50px;
+	}
+
+	input[type="submit"]{
+		background:#71a154;
+		color: #fff;
+		border: none;
+		padding: 12px 36px;
+		font-size: 17px;
+		letter-spacing: 1px;
+
+
+	}
+
+</style>
+
+<!-- JavaScript -->
+
+
+</head>
+<body>
+
+CApitulo 6
+
+problema A
+-indicarle las 20 llaves posibles con sus 4 imágenes y cofla debe sellecionar cual llave usar
+- una vez seleccionada enviar los datos al servidor y que otro programador se encargue
+
+<div class="flex-container">	
+</div>
+<form>
+	<input type="hidden" name="data" class="key-data">
+	<input type="submit" value="comprar" class="send-button">
+</form>
+<script type="text/javascript">
+
+	const contenedor = document.querySelector(".flex-container");
+	
+	// Esto sería lo correcto > document.querySelector(".send-button").value = "COMPRAR"
+	const boton = document.querySelector(".send-button");
+	let valorAntiguo = boton.value;
+	boton.value = valorAntiguo.toUpperCase(); 
+												// Para hacer todo esto bastaba con poner en el "value" del input "button", COMPRAR en mayúsculas. Pero esto era para aplicar lo que estuvimos viendo.
+
+	function crearLlave(nombre,modelo,precio){
+		img = "<img class='llave-img' src='llave.png'>";
+		nombre = `<h2>${nombre}</h2>`;
+		modelo = `<h3>${modelo}</h3>`;
+		precio = `<p>Precio: <b>$${precio}</b></p>`;
+		return [img,nombre,modelo,precio];
+	}
+
+	const llave = crearLlave("Llave1","modelo X", "33")
+	
+	// PARA NO HACER ESTO
+	/*
+	contenedor.innerHTML += llave[0] + llave[1] + llave[2];
+	contenedor.innerHTML += llave[0] + llave[1] + llave[2];
+	contenedor.innerHTML += llave[0] + llave[1] + llave[2];
+	contenedor.innerHTML += llave[0] + llave[1] + llave[2];
+	contenedor.innerHTML += llave[0] + llave[1] + llave[2];
+	*/
+
+	// esto es parte del "addEventListener"
+	const changeHidden = (number)=>{
+		document.querySelector(".key-data").value = number
+	}
+
+	let documentFragment = document.createDocumentFragment();
+
+	// Vamos a ITERAR
+
+	for (var i = 1; i <= 20; i++) {
+		let modeloRandom = Math.round(Math.random()*10+30); 
+		let precioRandom = Math.round(Math.random()*10000);
+		let llave = crearLlave(`llave ${i}`,`modelo ${modeloRandom}`,precioRandom);
+		let div = document.createElement("DIV");
+		// (...)
+
+		// Esto no lo vimos
+		div.addEventListener("click",()=>{changeHidden(modeloRandom)});
+
+		// (...)
+		div.tabIndex = i;
+		div.classList.add(`item${i}`,'flex-item');
+		div.innerHTML = llave[0] + llave[1] + llave[2] + llave[3];
+		documentFragment.appendChild(div);
+	}
+
+	contenedor.appendChild(documentFragment);
+
+	// Aquí también en "div.innerHTML += llave" > lo cambió por "div.innerHTML = llave[0].." para tener los datos más separados, porque se convertía todo en ARRAY; en este caso específico nos podría haber servido, pero quizas si queremos utilizar la función más adelante, nos sirve.
+
+</script>
+
+
+</body>
+</html>

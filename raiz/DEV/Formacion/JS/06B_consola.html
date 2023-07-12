@@ -1,0 +1,161 @@
+<!DOCTYPE html> <!-- 8/1/2023 -->
+<html>
+<head>
+	<title>CAPITULO VI - CONSOLE</title>
+	<script type="text/javascript" src="codigo.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+<div>
+	<section> <!-- 36) Obtención y modificación de elementos -->
+		<h3>36) Obtención y Modificación de Elementos (en HTML)</h3>
+		<ul>
+			<li><b class="culipato">textContent:</b> devuelve el texto de cualquier nodo
+			<s><script type="text/javascript">
+				const culipato = document.querySelector(".culipato");
+				let culipata = culipato.textContent;
+				document.write(culipata);
+				document.write("<br>" + "<b>'innerText;'</b> > " + culipato.innerText);
+				document.write("<br>Tampoco usaremos <b>'outerText;'</b> > "+ culipato.outerText);
+			</script></s></li>
+			<li>innerHTML si nos muestra la info en "alert" por ejemplo, las etiquetas html; a diferencia del "innerText"</li>
+			<li>outerHTML > nos muestra también la etiqueta que lo contiene ; el elemento HTML completo.</li>
+		</ul>
+	</section>
+
+	<section class="contenedor"> <!-- 37) Creación de Elementos -->
+		<h3>37) Creación de Elementos:</h3>
+		- createElements(): <br>
+		- createTextNode(): <br>
+		<script type="text/javascript">
+			const contenedor = document.querySelector(".contenedor");
+			const itemLi = document.createElement("LI"); // Tiene que ser en MAYÚSCULA.
+			const itemText = document.createTextNode("Este es un ítem de la lista") // Cualquiera de las dos opciones las podemos mostrar en console.log().
+
+		</script>	
+		<br>
+		<!-- ¿Cómo hacer para crear un ítem dentro de otro ítem? -->
+		<script type="text/javascript">
+			itemLi.innerHTML = itemText;
+			console.log(itemLi);
+		</script>
+
+		
+		- appendChild(): <br>
+		los métodos de los CHILDS son los métodos que se aplican especialmente a los childs (hijos, lo que está adentro, ahora el SCRIPT es el child del SECTION);<br>
+		metodo para un child, porque estamos trabajando sobre el child, basicamente (así de simple). Si vamos a usar un métodos para agregar un hijo<br> <br>
+		<script type="text/javascript">
+			itemLi.appendChild(itemText);
+			// console.log(itemLi) // REPETIDO	
+			contenedor.appendChild(itemLi);
+
+			// Otro camino posible es:
+			const itemm = document.createElement("LI");
+			itemm.innerHTML = "Este es otro elemento de la lista, pero no es un OBJETO así que no tiene las mismas propiedades que un 'textNode'"; // Este no es un OBJETO.
+			contenedor.appendChild(itemm);
+		</script>
+
+		<br><br>
+		ELEMENTOS:<br>
+		un elemento no puede ser agregado dos veces, ya que es un objeto; tiene identificadores y es único (Si pretendemos repetir la operación con un BUCLE, el DOM va a hacer que consumamos muchos recursos; ya que borra todo y lo vuelve a "escribir")<br><br>
+	
+		- createDocumentFragment()<br> 
+		para no hacer esto:<br>
+		<script type="text/javascript">
+			for (i = 0; i < 20; i++){
+				const iteem = document.createElement("LI");
+				iteem.innerHTML = "Nuevo elemento de la lista";
+				contenedor.appendChild(iteem);
+			}
+		</script>
+		<br><br>
+		utilizamos este método.<br>
+		<br>
+		<script type="text/javascript">
+			const fragmento = document.createDocumentFragment();
+			for (i = 0; i < 20; i++){
+				const ittem = document.createElement("P");
+				ittem.innerHTML = "Nuevo elemento de la lista, sin consumir tantos recursos";
+				fragmento.appendChild(ittem);
+			}
+			console.log(fragmento);
+			contenedor.appendChild(fragmento); 
+
+		</script>
+
+	</section>
+	<div class="contenedor"></div>
+
+	<section> <!-- 38) Obtención y modificación de Childs (hijos) -->
+		<h3>38) Obtención y modificación de Childs (hijos)</h3>
+		-firstChild: los espacios en HTML son "texto"; entonces contarían como 1er hijo <br><i>"{const primerHijo = contenedor.firstChild;}"</i><br><br>
+		- lastChild; idem pero con el último<br>
+		- firstElementChild; ahora no nos importan los espacios en HTML<br>
+		- lastElementChild<br>
+		- childNodes: nos devuelve un nodeList, no un ARRAY. No podemos usarlo con ".push", pero si podemos recorrerlo con ".forEach", porque es un OBJETO ; también<br>
+		<i>hijos.forEach(hijo => console.log(hijo));</i><br><br>
+		- children: solo nos devuelve las etiquedas HTML (no devuelve los nodos text, deespacios entre etiquetas<br>
+		La colección HTML no se puede recorrer con ".forEach"; lo podemos recorrer con un "for .. in":<br>
+		for (hijo <b>in</b> hijos){<br>
+		console.log(hijo)<br> <!-- nos devuelve el indice -->
+		}<br><br>
+		for (hijo <b>of</b> hijos){...} <br> <!-- nos devuelve los nombres -->
+	</section>
+	<section> <!-- 39) Meth: childs ; parents ; siblings -->
+		<h3>39) Childs (hijos)</h3> 
+		<h4>replaceChild() + hasChildNodes()</h4>
+		<article class="concuchara">
+			<h5 class="h5">Con cuchara o contenedor</h5>
+		</article>
+		<b style="color:blue"><script type="text/javascript">
+			const concuchara = document.querySelector(".concuchara");
+			const parraff = document.createElement("P");
+			parraff.innerHTML = "Parrafo";
+			const h5_nuevo = document.createElement("H5");
+			h5_nuevo.innerHTML = "Título";
+
+			const h5_antiguo = document.querySelector(".h5"); // OBJETO
+			concuchara.replaceChild(h5_nuevo,h5_antiguo); 
+
+			//hasChildNodes() Devuelve F/T. 
+			let answer = concuchara.hasChildNodes(); // VARIABLE simple
+
+			if (answer) {
+				document.write("El elemento no tiene hijes");
+			} else {
+				document.write("El elemento tiene hijes")
+			}
+		</script></b><br> 
+		<h4>removeChild()</h4> <!-- IDEM -->
+
+		<h3>40) Parents (padres)</h3> <!-- Ambos muy similares -->
+		<h4>parentElement</h4> <!-- selecciona el xadre ELEMENTO -->
+		<h4>parentNode</h4> 
+
+		 <br>
+		41) Siblings (hermanes) + Extras(nodos)<br>
+		<script type="text/javascript">
+			document.write("<b>nextSibling:</b> " + concuchara.nextSibling + "<br>");
+			document.write("<b>previousSibling:</b> " + concuchara.previousSibling+ "<br>");
+			document.write("<b>nextElementSibling:</b> " + concuchara.nextElementSibling + "<br>");
+			document.write("<b>previousElementSibling:</b> " + concuchara.previousElementSibling + "<br>");
+			document.write("<b>concuchara.closest('.contenedor'):</b> selecciona el elemento ascendente más cercano");
+		</script>
+		<br>
+		42) Nodos - Extras
+		<script>
+			// document.write("<b>closest:</b>" + concuchara.closest() + "<br>")
+		</script>
+
+
+		Lo que vamos a ver dom-traversing (exploración de los nodos)
+		es del 39 al 43, para finalizar con el capítulo.
+
+	</section>
+	<section> <!--  -->
+		
+	</section>
+</div>
+
+</body>
+</html>

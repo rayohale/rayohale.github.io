@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!-- 
+
+Creando una nueva clave SSH; un quilombo
+
+https://docs.github.com/es/authentication/connecting-to-github-with-ssh
+
+
+1) comprobar si hay claves existentes: "ls -al ~/.ssh"
+https://docs.github.com/es/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
+
+
+2) generar la clave ssh: "ssh-keygen -t ed25519 -C "your_email@example.com""
+https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+3) agent
+			eval "$(ssh-agent -s)"
+			ssh-add ~/.ssh/id_ed25519
+
+
+x) agregar la clave a GITHUB
+https://docs.github.com/es/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+fue clave el comando:
+	cat ~/.ssh/id_ed25519.pub
+para que me tirara la clave "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK/rWK/l1IV/SQktcnEAntzAkEHe8SrmCUQANL3zmv4t ruizdalejandro@gmail.com" y todo eso puse como clave
+
+-->
+</body>
+</html>

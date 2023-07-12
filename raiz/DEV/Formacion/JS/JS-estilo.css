@@ -1,0 +1,35 @@
+/* #HTMLCSSButton : Botones solo con HTML y CSS
+label{
+    display:inline-block;
+    background:#ccc;
+    line-height:36px;
+    padding: 0 10px;
+    cursor:pointer;
+  }
+  div{
+    padding:10px 0
+  }
+  div div{
+    display:none
+  }
+  input{display:none}
+  input:checked+label+div{
+    display:block;
+  }
+  */
+
+/* #JavascriptButton : PARA OCULTAR CON JAVASCRIPT 
+  .btn{
+    display:inline-block;
+    background:#ccc;
+    line-height:36px;
+    padding: 0 10px;
+    cursor:pointer;
+  }
+  div{
+    display:none
+  }
+  div.active{
+    display:block
+  }
+*/

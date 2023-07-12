@@ -1,0 +1,186 @@
+<!DOCTYPE html> <!-- 8/1/2023 -->
+<html>
+<head>
+	<title>CAPITULO VI - DOM</title>
+	<script type="text/javascript" src="codigo.js"></script>
+
+ 	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+<div>
+	<section> <!-- 27 DOM -->
+		<h3><a name="dom"></a>27) DOM (document object model)</h3>
+		<ul>
+			<li>Definición: interfaz, interfaz. ARBOL: </li>
+			<li>Nodo - un nodo en el DOM es cualquier etiqueta del cuerpo, como un párrafo, el mismo body o incluso las etiquetas de una lista. // no siempre son etiquetas, a veces sueles ser otro tipo de elementos.</li>
+			<ul>
+				<li>* Document: el nodo document es el nodo raíz, a partir del cual derivan el resto de nodos.</li>
+				<li>* Element: nodos definidos por etiquetas html.</li>
+				<li>* Text: el texto dentro de un nodo elemnet se considera un nuevo nodo hijo de tipo text (texto).</li>
+				<li>* Atribute: los atributos de las etiquetas definen nodos, (en JS no los veremos como nodos, sino como información asociada al nodo de tipo element)</li>
+				<li>Comentarios y otros: los comentarios y otros elementos como las declaraciones doctype en cabecera de los documentos HTML generan nodos.</li>
+			</ul>
+		</ul>
+	
+		<p style="background: red;color:white">Los nodos, son los cuadraditos</p>
+		
+		<div class="position">
+			<div class="position-box" style="top: 130px; 
+			left: 40px; background: red">DOM</div>
+			<div class="position-box" style="top: 90px; 
+			left: 120px; background: red">HTML</div>
+			<div class="position-box" style="top: -10px;left:200px; background: green">HEAD</div>
+			<div class="position-box" style="top: 70px;left:200px; background: blue">BODY</div>
+			<div class="position-box" style="background:green; top:-120px; left:280px">TITLE</div>
+			<div class="position-box" style="background:green; top:-100px; left:280px">META</div>
+			<div class="position-box" style="background:blue; top:-80px; left:280px">SCRIPT</div>
+			<div class="position-box" style="background:#0af; top:-50px; left:280px">FORM</div>
+			<div class="position-box" style="background:#0af; top:-90px; left:360px">INPUT</div>
+		</div>
+	</section>
+
+	<p>
+		Los cuadraditos son los nodos, todo estaría dentro del DOM; dentro de las etiquetas... los nodos también serían los atributos; PERO PARA JS NO! 
+	</p>
+
+	<section> <!-- 28) Document - met. de seleccion de elem. -->
+		<h3>28) Document - métodos de seleccion de elementos</h3>
+		<ul>
+			<li>document. getElementById() - Selecciona un elemento por ID</li>
+			<li>getElementsByTagName() - selecciona todos los elementos que coincidan con el nombre de la etiqueta especificada.</li>
+			<li>querySelector() - Devuelve el primer elemento que coincida con el grupo especificado de selectores.</li>
+			<li>querySelectorAll() - Devuelve todos los elementos que coincidan con el grupo especificado de selectores.</li>
+		</ul>
+		<p>
+			<b>Un NodeList no es un ARRAY</b><br>
+			document.getElementById("parrafo") <p id="parrafo"></p><br>
+			document.getElementsByTagNAme("p"): seleccionariamos todas las etiquetas "p"<br>
+			document.querySelector() >> por los selectores "class"; acordarse del "." en el caso de las .class y del "#" en el caso de las #id. // elige el primero ; sería por ejemplo <b>document.querySelector(".parrafo")</b><br>
+			document.querySelectorAll() >> selecciona todos los elementos que coincidan con el selector; elige todos;<br>
+			Si escribimos:<br>
+			          parrafo = document.querySelectorAll(".parrafo");<br>
+			          document.write(parrafo[5]);<br>
+			          >>>>> nos elije el 5to elemento, pero lo imprime "indicandome qué es": [object HTMLparagraph..].<br>
+		</p>
+	</section>
+	<section> <!-- 29) Metodos para definir.. -->
+		<h3>29) Metodos para Definir, Obtener y Eliminar valores de atributos</h3><br>	
+		<input type="text" class="rangoEtario">
+		<script type="text/javascript">
+			const rangoEtario = document.querySelector(".rangoEtario");
+		</script>
+		<br><br>
+		<input type="button" value="rango etario" onclick='document.write(rangoEtario)'>
+		<ul>
+			<li>setAttribute() - Modifica el valor de un atributo</li>
+			<script type="text/javascript">
+				rangoEtario.setAttribute("type","range");
+				// Acabamos de modificar el tipo de atributo de TEXT a RANGE; del CLASS "rangoEtario"
+
+				// no solo modifica, sino también agrega.
+
+			</script>
+			<li style="display: inline; padding-right:10px">getAttribute() - es para OBTENER el atributo</li><input type="button" value="imprimir" onclick="document.write(rangoEtario.getAttribute('type'));">
+			<li>removeAttribute() - Remueve el valor de un atributo.</li>
+		</ul>
+	</section>
+	<section> <!-- 30) Atributos globales -->
+		<h3><a name="atributos-globales"></a>30) Atributos globales</h3>
+		<ul>
+			<li>Hay otros <b>atributos globales</b> que no fueron incluidos en esta lista, como el <i>class</i> y el <i>style</i>.</li>
+			<li>class - lista de clases del elemento separadas por espacios</li>
+			<li style="display: inline-block;" contenteditable="true">contentEditable - </li>
+			<li>dir - INDICA LA DIRECCIONALIDAD DEL TEXTO ; tiene tres atributos: ltr (left to right / x defecto) ; rtl (right to left) ; hay uno mas que no recomienda el tutor.</li>
+			<li>hidden - INDICA SI EL ELEMENTO AÚN NO ES, O YA NO ES, RELEVANTE. si está definida, no se muestra sin importar el valor que tenga (t/f).</li><a hidden="" href="gmail.com" class="jiden">GMAIL</a>
+			<li>tabindex - indica si el elemento puede obtener un focus de input. <i tabindex="1">Si le pongo letras</i> <i tabindex="f">no sirve</i> en cambio con los número sí. <i tabindex="2">además</i> de que cuando <i tabindex="3">apretamos tab</i>, nos cambia el <i tabindex="4">orden</i></li>
+			<li class="lii" title="normal">title</li>
+			<b class="js-text"><script>
+				const jiden = document.querySelector(".jiden");
+				jiden.removeAttribute("hidden");
+				const lii = document.querySelector(".lii");
+				lii.setAttribute("title","título cambiado");
+			</script></b>
+		</ul>
+	</section>
+	<section> <!-- 31) Atributos de Inputs -->
+		<h3><a name="atributos-input"></a>31) Atributos de Inputs</h3>
+		<ul>
+			<li>- className: </li><input type="button" class="input-normal" value="botón?" name=""> 
+			<b class="js-text"><script type="text/javascript">
+				const input = document.querySelector(".input-normal");
+				document.write(input.className); // muestra el class
+				
+		
+
+			</script></b><br>
+			<li>- value</li><b class="js-text"><script type="text/javascript">document.write(input.value); // muestra el value</script></b><br>
+			<li>- type</li><b class="js-text"><script type="text/javascript">document.write(input.type = "number"); // también podemos modificarlo directamente.</script></b><br>
+			<li>- accept</li><input type="file" name="" value="Adjuntar" class="soloPNG">
+			<b class="js-text"><script type="text/javascript">
+				const soloPNG = document.querySelector(".soloPNG");
+				soloPNG.accept = "image/png"; // Solo va a aceptar PNG.
+			</script></b><br>
+			<li>- form</li> <!-- Nos permite ejecutar un INPUT dentro de un FORM-->
+			<form id="formulario">
+				<input type="text" name="">
+				<input type="submit" name="">
+			</form>
+				<input type="submit" name="" form="formulario"><br>
+			<li>- minlengh: la mínima cantidad de caracteres que tiene que tener un INPUT.</li>
+			<form>
+				<input type="text" name="" class="mC" minlength="5">
+				<input type="submit" name="">
+			</form><br>
+			<li>- placeholder: el texto que aparece antes de escribir en el INPUT de texto</li>
+			<li>- required: es un campo requerido, si lo dejo vacío "input.required = ''" entonces no pasa nada, mínimo un espacio >> "input.required = '(espacio)'"</li>
+		</ul>
+	</section>
+	<section> <!-- 32) Style attributs -->
+		<h3>32) atributos de Style</h3>
+			<p class="modificarStyle">Es básicamente modificar algo de CSS del atributo; como por ejemplo ahora, que modifiqué este texto a <b>rojo</b> desde JavaScript.</p>
+			<ul>
+				<li>Utiliza propiedades camelCase, como ocurre con el "backgroundColor" que modifico desde JS.</li>
+			</ul>
+			<script type="text/javascript">
+				const modificarStyle = document.querySelector(".modificarStyle");
+				modificarStyle.style.color = "red";
+				modificarStyle.style.backgroundColor = "yellow";
+			</script>
+		</section>
+	</section>
+
+	No se donde quedaron los otros números
+
+	<section> <!-- 35) classList -->
+		35) Clases, "classList" y métodos de classList:<br>
+		definición y usos<br>
+		add() - añade una clase<br>
+		remove() - remueve una case<br>
+		item(1) / item(4) / etc - devuelve la clase del indice especificado (cuando es: "class='grande lisa titulo'")<br>
+		contains("grande") - verifica si ese elemento posee o no, la clase especificada; nos devuelve "true" o "false":	<s><script type="text/javascript">
+			modificarStyle.classList.add("loca");
+
+			let item = modificarStyle.classList.contains("loca");
+			if (item) {
+				document.write("la clase existe")
+			} else {
+				document.write("la clase NO existe")
+			}
+		</script></s><br>
+		
+		toogle() - si no tiene la clase especificada, la agrega, si ya la tiene, la elimina: <i class="prueba">prueba</i><br><script type="text/javascript">
+			/* 
+			ERRORES DEL TOOGLE
+			let mS = document.querySelector(".prueba")
+			mS.classList.toogle("loca"); // en este caso la saca
+			modificarStyle.classList.toogle("bkn",true); // en este caso, si la tiene no la saca.
+			modificarStyle.classList.toogle("bkn",false); // en este caso la sacar siempre, pero no la agrega si es que no la tiene.
+			estos dos últimos parámetros no los soporta INTERNET EXPLORER o versiones anteriores a OPERA 12. 
+			*/
+
+		</script><br>
+		<b>replace()</b> - reemplaza una clase por otra: nos reemplaza la clase, no mucha ciencia más.<br>
+	</section>
+</div>
+</body>
+</html>

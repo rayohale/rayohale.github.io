@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COFLA :: Capitulo 4</title>
+	<script src="cofla.js"></script>
+</head>
+<body>
+	<h1>COFLA - Capitulo 4</h1>
+	<div>
+		<h2>Problema A</h2>
+		<p>
+			Cofla ya está terminando el primer semestre del primer ciclo, la tarea que le debe realizar es mucho mas avanzada de la que tenía antes, además de suma, resta, multiplicación y división; ahora también necesitará calcular potencias, raíces cuadradas y cúbicas.<br><br>
+			<b>Crear sluciones:</b><br>
+			- Perfeccionar calculadora para poder implementar las nuevas funciones
+		</p>
+		<input type="button" value="caculadora" onclick="calculadora2();">
+	</div>
+	<div>
+		<h2>Problema B</h2>
+		<p>
+			La facultad de COFLA está por comenzar y ya las 12 materias de la carrera tienen asignado une profe, y todes les estudiantes se anotaron en dichas clases:<br>
+			<ul>
+				<li>Crear una función que al pasarle como parámetro la materia, nos devuelva:</li>
+				<ul>
+					<li>profe asignade</li>
+					<li>el nombre de todes les estudiantes</li>
+				</ul>
+				<li>Crear función que nos diga en cuántas clases está COFLA.</li>
+				<li>Nombrar las clases en las que está y les profes de cada una.</li>
+			</ul>
+		</p>
+		<input type="button" value="Lista Física" onclick="mostrarInformacion('fisica');">
+		<input type="button" value="Lista Lógica" onclick="mostrarInformacion('logica');">
+		<input type="button" value="Lista Álgebra" onclick="mostrarInformacion('algebra');">
+		<input type="button" value="Lista Programación" onclick="mostrarInformacion('programacion');">
+		<input type="button" value="Lista Química" onclick="mostrarInformacion('quimica');">
+		<input type="button" value="Lista Matemáticas" onclick="mostrarInformacion('matematicas');">
+		<input type="button" value="Lista Cálculo" onclick="mostrarInformacion('calculo');">
+		<input type="button" value="Lista Filosofía" onclick="mostrarInformacion('filosofia');">
+		<br>
+		<input type="button" value="CLASES COFLA" onclick="cantidadDeClases('cofla');">
+	</div>
+
+	<div>
+		<h2>Problema C</h2>
+		<p>
+			Cofla ya vió las 12 materias y se decidió en cual se va a inscribir así que en tres días lo hará, el problema es que se rompió el sistema de inscripción. Crear soluciones:
+		</p>
+		<ul>
+			<li>Crear una función para preguntarle a cofla en qué materia se quiere inscribir.</li>
+			<li>Si ya hay 20 alumnos en la materia negarle la inscripción.</li>
+			<li>Si hay menos de 20 alumnos inscribir a cofla y añadirlo a la lista de alumnos.</li>
+		</ul>
+		<script type="text/javascript">
+			inscribir("pedrito","fisica");
+		</script>
+	</div>
+
+</body>
+</html>

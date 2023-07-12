@@ -1,0 +1,16 @@
+.click:hover {
+	color: #a22;
+	cursor: crosshair;
+}
+
+.click {
+	color: #2a2;
+}
+
+li i {
+	color: #fff;
+	background: #2a2;
+	font-style: normal;
+	padding: 0 4px;
+}
+

@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript: Introducción</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo-js.css">
+    <script src="codigo.js"></script>
+
+
+	<!-- FORMATO CSS ESPECÍFICO - 2023/02/01 21:26hs -->
+	<style>
+		pre {
+			background-color: #aaa;
+			border: 5px solid black;
+		}
+
+		.faltante {
+			background-color: #ffc;
+			border: 5px solid #f22;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<nav>
+		<a href="cofla/capitulo-1/index.html">La historia de Cofla</a>
+	</nav>
+	<hgroup>
+		
+	</hgroup>
+</header>
+
+<!-- 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 -->
+		<!-- 
+		The key fingerprint is:
+		SHA256:m6g29EQukrAecoRhMiUPfoO2iaiXz3J1zX0HUlnCcbI ruizdalejandro@gmail.com
+		-->
+
+<!-- ################################################################ 01 INTRODUCCION -->
+
+<div>
+	<a href="variables.html">Variables</a>
+	
+	<!-- Capitulo 1 -->
+	<div>
+		<h3><b>0) Introducción - ¿Qué es JavaScript?</b></h3>
+		<ul>
+			<li>Lenguaje de programación: darle instrucciones a un navegador, a través de código.</li>
+			<li>Interpretado: están los compilados (tiene que pasar antes por un compilador, para que la compu lo pueda leer en lenguaje binario) y los interpretados (el navegador tiene un interprete que lee el JS)</li>
+			<li>Orientado a objetos: abarca todos los conceptos y características (clases, herencia, polimorfismo, etc)</li>
+			<li>Imperativo: todas las instrucciones van de línea en línea (paso por paso, no se ejecuta todo junto como otros lenguajes.</li>
+			<li>Case sensitive (Upper and Lower Case): es sensible a MAYÚSCULAS y minúsculas.</li>
+			<li>Basado en prototipos / instancias / classles: cuando creamos un objeto, instanciar clases... </li>
+			<li>Tipado débil: el valor de las variables puede cambiar con el tiempo. </li>
+			<li>Lenguaje dinámico: la variable no se ajusta al dato, el dato se ajusta a la variable.</li><br>
+			<li>+ ECMASCRIPT (5.1 y 6, 7, 8, Next).</li>
+		</ul>
+		<h3><b>1) Editor de Texto</b></h3>
+		<ul>
+			<li>(identar es ordenar)</li>
+			<li>Personalizar Sublime Text 3</li>
+			<ul>
+				<li>Install Package Control</li>
+				<li>Set UI</li>
+				<li>Color Scheme (Brogrammer)</li>
+				<li>LiveReload</li>
+				<li>ColorHelper</li>
+				<li>ColorPicker</li>
+			</ul>
+			<li>Otras opciones (VSC, Atom)</li>
+		</ul>
+		<h3><b>2) ¿Para qué se usa?</b></h3>
+		<ul>
+			<li>Dinamismo de los sitios web: dinámicos del lado del cliente</li>
+			<li>Servidor e NodeJS</li>
+			<li>Tecnologías Frontend como Angular, React o Vue.JS</li><br>
+			<li>Otros usos no tan comunes:</li><br>
+			<li>Inteligencia artificial</li>
+			<li>Placas electrónicas (Jhonny Five)</li>
+			<li>Mobile Apps</li>
+			<li>Desktop Apps</li>
+			<li>Etc...</li>	
+		</ul>
+		<h3><b>3) Formas de ENLAZAR JavaScript</b></h3>
+		<ul>
+			<li style="color:#f22" onclick="alert('onclick cuando apreto sale este mensaje')">En línea: no recomendado por la modularización</li>
+			<script type="text/javascript">
+				alert('Esto aparece porque hay hecho un SCRIPT con este ALERT')	
+			</script>
+			<br>
+			<li>Como contenido en la etiqueta SCRIPT</li>
+			<li>Enlazar con un archivo externo; como contenido en un archivo de formato .js</li>
+			<script src="codigo.js"></script>
+			<li>Con un Require: no lo vamos a ver ahora</li>
+		</ul> 
+	</div> 
+</div>
+<div>
+	<a href="javascript.html">Introducción</a>
+	<h3>4) Variables</h3>
+	<ul>
+		<li>Concepto: espacio que guardamos en memoria;</li>
+		<li>Tipos de Datos: String (cadena de texto), Nubmber, Boolean // Hay datos PRIMITIVOS (todos los que estarán apareciendo aquí) y otros que son construídos a base de otros;</li>
+		<li>Casos especiales de Datos: </li>
+		<ul>
+			<li><b class="click" onclick="alert(undef)">Undefined:</b> existe en el programa, pero no tiene valor;</li>
+			<li><b class="click" onclick="alert(nulo)">Null:</b> vacío intencional. Ya está inicializada;</li>
+			<li><b>Nan:</b> Not at Number > no es un número;</li>
+		<li>Scope: es el ámbito/alcance de las variables;</li>
+		<li><b>Hoisting:</b> habla de cómo funcionan las fases de ejecución y creación</li>
+		<li>Tipos de variables:</li>
+		<ul>
+			<li><b>const:</b> Es constante, no cambia. Se inicializa una sola vez. Se tiene que <b>INICIALIZAR</b> una vez que se la <b>DECLARA</b>;</li>
+			<li><b>var:</b>< es variable <b>(no la vamos a usar)</b>;</li>
+			<li><b>let:</b> nos limita el alcance de la variable a el bloque en la que la ejecutamos. Tiene menos alcance;</li>
+		</ul>
+		<li>Crear múltiples variables (separandolas con coma) -> Let nombre 1 = "jorge", nombre 2 = "pedro";</li><br>
+		<!-- ARREGLAR --> <li><b onclick="prompt(edad)" class="click">Pruebas con Prompt:</b> es una de las APIs de JS > edad. ;</li>	
+	</ul>
+	<h3><b>5) Operadores en JavaScript</b></h3>
+	<ul>
+		<li>OPERADORES DE ASIGNACIÓN: asigna un valor al operando de la izquierda basado en el valor del operando de la derecha;</li>
+		<ul>
+			<li>asignación 'a = 10 // b = 5 // x = 100' 
+				<script>
+					a= 10; 
+					b=5; 
+					x = 100
+				</script>
+			</li>
+			<li>adicción 'a += b > a = a + b > {<i>
+				<script>
+					a += b; 
+					document.write(a)
+				</script>
+			</i>}'</li>
+			<li>sustracción 'a -= b'</li>
+			<li>multiplicación 'a *= b'</li>
+			<li>división 'a /= b'</li>
+			<li>resto 'a %= b'</li>	<!-- Divide y nos dice lo que sobra -->
+			<li>exponencialización 'a **= b'</li>
+			<li>Avanzados</li>
+			<ul>
+				<li>desplazamiento a la izq 'a <<= b'</li>
+				<li>desplazamiento a la derecha 'a >>= b'</li>
+				<li>sin signo de desplazamiento a la derecha ' a >>>= b'</li>
+				<li>AND</li>
+				<li>XOR</li>
+				<li>OR</li>
+			</ul>
+			<li>EJEMPLO = {<i>
+				<script>
+					numero=15;
+					document.write(numero)
+				</script>
+			 </i>}</li>
+		</ul>
+		<li><b>OPERADORES ARITMÉTICOS:</b> toman valores numéricos (ya sean literales o variables) como sus operandos y retornan un valor numérico único.</li>
+		<ul>
+			<li><b>Addition (+)</b> > SUMA : 'a + b' = <i>
+				<script>
+					document.write(a+b)
+				</script>
+			</i></li>
+			<li><b>Decrement (--)</b> > DECREMENTO : le resta uno a 'x' { <i>
+				<script>
+					x--; 
+					document.write(x)
+				</script>
+			</i> }</li>
+			<li><b>División (/)</b> > DIVISIÓN</li>
+			<li><b>Exponentiation (**)</b> > EXPONENCIACIÓN</li>
+			<li><b>Increment (++)</b> > INCREMENTO</li>
+			<li><b>Multiplication (*)</b> > MULTIPLICACIÓN</li>
+			<li><b>Remainder (%)</b> > RESTO</li>
+			<li><b>Substraction (-)</b> > SUTRACCIÓN/RESTA</li>
+			<li><b>Unary negation (-)</b> > NEGACIÓN UNARIA : lo convierte en negativo <i>
+				<script>
+					document.write(-x);
+				</script>
+			</i></li>
+			<li><b>Unary plus (+)</b> > ADICIÓN UNARIA: lo convierte en positivo</li>
+		</ul>
+	</ul>
+	<h3><b>6) Concatenación</b></h3>
+	<ul>
+		<li><i>
+			<script>
+				saludo = "¡Esto es una concatenación! "; 
+				pregunta = "¿Estás entendiendo?"; 
+				document.write(saludo+pregunta)
+			</script>
+		</i></li>
+		<li><b>Con el signo + :</b> Cuando el str (string) detecta TEXTO, convierte todo en una 'cadena de texto' { <i>
+			<script>
+				str1=54;
+				str2=3; 
+				frase="hola " + str1 +str2; 
+				document.write(frase)
+			</script>
+		</i> }. A diferencia de esta suma = <i>
+			<script>
+				document.write(str1+str2)
+			</script>
+		</i></li>
+		<li>x.concat : sí o sí tenemos que usar una str, porque es un método de CADENA > <i>
+			<script> 
+				num1 = "6"; 
+				num2 = "5"; 
+				frase2 = num1.concat(num2); 
+				document.write(frase2);
+			</script>
+		</i></li>
+		<li><b>con backtiks (`x`) y la variable entre ${} :</b> <i>
+			<script>
+				nombre = "Alejandro"; 
+				frase3 = `soy ${nombre} y estoy aprendiendo PROGRAMACION con tutoriales`; 
+				document.write(frase3);
+			</script>
+		</i></li>
+	</ul>
+	<h3><b>7) Backticks (Bloquote o Acento Grave) y Escape</b></h3>
+	<ul>
+		<li><i>
+			<script type="">
+				l1 = "linea 1\n\
+				linea 2"; 
+				l2 = `linea 1
+				linea 2`; 
+				document.write("Sin backticks: " + l1 + " / Con backticks: " + l2);
+			</script>
+		</i></li>
+		<li>"así 'si' se puede"</li>
+		<li>'así "también" se puede'</li>
+		<li>`también se puede "así"`</li>
+		<li>"así "no" se puede, y etc"</li>
+	</ul>
+	<h3>8) operadores (intermedio)</h3>
+
+8) operadores (intermedio)
+- operadores lógicos: se basan en T y en F > nos devuelven un RESULTADO si es que se cumple,  o no, una CONDICION
+- operadores de comparación: comparan dos EXPRESIONES y devuelven un valor <b>Boolean</b> que representa la <b>relación</b> de sus valores (TRUE/FALSE > T/F) 
+
+IGUALDAD (equiality): a == b
+(inequality): a != b
+(identity): a === b {el mismo VALOR y el mismo TIPO de datos (ESTRICTAMENTE igual)}
+Non-identity: a !== b 
+Greater than: a > b
+Greater than or equal: a >= b
+Less than: a < b
+Less than or equal a <= b
+
+aceptan solo TRUE y FALSE (valores lógicos):
+AND (&&) > si las dos condiciones se cumplen, da TRUE. Si alguna de las dos es FALSE; devuelve FALSE
+OR (||) > si cualquiera de las dos es T, devuelve T.
+NOT (!) > da vuelta el valor (T > F ; F > T)
+ > pueden haber operaciones largas como = (num1 > num2 && num3 == num4) || (!num3 && num4 != num5)  
+
+9) Camel Case (primeroMinuscula)
+
+10) Condicionales (1:36:55)
+- sentencia que nos permite validar algo (bloques {lo que está acá})
+- If > solo se va a ejecutar si la condición es TRUE (solo 1)
+- Else If > se ejecuta si es que el if no se ejecuta (los que querramos)
+- Else > se ejecuta si es que ni IF ni ELSE IF son true. (solo 1)
+ 
+<div>
+	<ul>
+		<br>
+		<li><i>
+			<script>
+				if (10 > 2) {
+					document.write("Probando el if {}")
+				}
+
+				else if () {
+				}
+			</script>
+		</i></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	let numero = 23;
+	let numero2 = 13;
+</script>
+
+
+
+</div>
+<div>
+	<div>
+		<h3>?????????????????</h3>
+		<ul>
+			
+		</ul>
+
+	</div>
+</div>
+
+
+<!-- ################################################################ 02 ARRAYS -->
+
+<div>
+	<!-- Capitulo 2 -->
+	<div>
+		<h2>Capitulo 2</h2>
+		<h3><a name="arrays"></a>11) Arrays <i>(arreglos)</i></h3>
+		<pre>
+			<b>CODIGO</b>
+			let frutas = ["banana", "manzana", "pera"];
+			let hdsilvestre = {
+				nombre: "HD Silvestre",
+				uso: "Docencia",
+				ubicacion: "General Rodriguez, Argentina",
+				espacio: "50 gb",
+			}
+
+			let nombre = hdsilvestre["nombre"];
+			let uso = hdsilvestre["uso"];
+			let ubicacion = hdsilvestre["ubicacion"];
+			// let espacio = hdsilvestre["espacio"];
+
+			frase = `el nombre de mi PC es <b>${nombre}</b><br>`;
+			frase4 = `el espacio de mi PC es <b>${hdsilvestre["espacio"]}</b><br>`
+			
+			document.write(frase);
+			document.write(frase4);
+			document.write(frutas);
+		</pre>
+		<script type="text/javascript">
+			let frutas = ["banana", "manzana", "pera"];
+			let hdsilvestre = {
+				nombre: "HD Silvestre",
+				uso: "Docencia",
+				ubicacion: "General Rodriguez, Argentina",
+				espacio: "50 gb",
+			}
+
+			let nombre = hdsilvestre["nombre"];
+			let uso = hdsilvestre["uso"];
+			let ubicacion = hdsilvestre["ubicacion"];
+			// let espacio = hdsilvestre["espacio"];
+
+			frase = `el nombre de mi PC es <b>${nombre}</b><br>`;
+			frase4 = `el espacio de mi PC es <b>${hdsilvestre["espacio"]}</b><br>`
+			
+			document.write(frase);
+			document.write(frase4);
+			document.write(frutas);
+		</script>
+		<h3>12) Arrays asociativos</h3>
+		<pre class="faltante">
+			FALTA ESTA PARTE??? Creo que está en "11) Arrays"
+		</pre>
+		<h3><a name="bucles"></a>13) Bucles e Iteración</h3>
+
+		<ul>
+			<li><b>SENTENCIA while (bucle):</b> 
+				<pre>
+					let bucle = 0;
+					let bucle2 = 0;
+					while (bucle < 10) {
+						document.write(`${bucle}, `);
+						bucle++	
+					}
+					// en el TUTORIAL lo hicieron al reves
+					document.write("< br> Tutorial mood > ")
+					while (bucle2 < 6) {
+						bucle2++;
+						document.write(bucle2)	
+					}
+				</pre>
+				<script type="text/javascript">
+					let bucle = 0;
+					let bucle2 = 0;
+					while (bucle < 10) {
+						document.write(`${bucle}, `);
+						bucle++	
+					}
+					// en el TUTORIAL lo hicieron al reves
+					document.write("<br> Tutorial mood > ")
+					while (bucle2 < 6) {
+						bucle2++;
+						document.write(bucle2)	
+					}
+				</script>
+			</li>
+			<li><b>SENTENCIA do while: </b>Primero se ejecuta la condición, y luego pregunta >
+				<script type="text/javascript">	
+					let bucle3 = 0;
+					do {
+						bucle3++;
+						document.write(bucle3 + ", ");
+					}
+					while (bucle3 <= 7);
+				</script>
+
+			</li>
+			<li><b>SENTENCIA break:</b>
+				<script>
+					let bucle4 = 0
+					while (bucle4 < 1000) {
+						bucle4++;
+						document.write(bucle4 + ", ");
+						if (bucle4 == 15) {
+							break;
+						}
+					}
+					document.write("16.")
+				</script>
+			</li>
+			<li><b>SENTENCIA for</b></li>
+			<ul>
+				<li><b>for():</b>
+					<script>
+						for (let i = 0; i < 20; i++) {
+							document.write(i);
+						}
+					</script>
+					 
+					
+				</li>
+				<li><b>con 'break':</b>
+					<script type="text/javascript">
+						for (let i = 0; i < 20; i++) {
+							if (i == 15) {
+								break;
+							}
+							document.write(i + ", ")
+						}
+					</script>
+				</li>
+				<li><b>con 'continue':</b>
+					<script>
+						for (let i = 20; i > 0; i--) {
+							if (i == 10) {
+								continue;
+							}
+							document.write(i + ", ")
+						}
+					</script>
+				</li>
+				<li>
+					<script type="text/javascript">
+						// for ()
+					</script>
+				</li>
+			</ul>
+			<li><b>SENTENCIA for .. in</b></li>
+			<ul>
+				<li><b>(i): </b>
+					<script type="text/javascript">
+						let lista = ["harina","fruta",3,4,5,6];
+						for (i in lista) {
+							document.write(i);
+						}
+					</script>
+				</li>
+				<li><b>(lista): </b>
+					<script type="text/javascript">
+						for (i in lista) {
+							document.write(lista);
+						}
+					</script>
+				</li>
+				<li><b>(lista[i]): </b>
+					<script type="text/javascript">
+						for (i in lista) {
+							document.write(lista[i])
+						}
+					</script>
+				</li>
+			</ul>
+			<li><b>SENTENCIA for .. of:</b>
+				<script type="text/javascript">
+					for (i of lista) {
+						document.write(i)
+					}
+					document.write(" > <i>Similar al (lista[i])</i><br><br>")
+
+					array1 = ["juan", "jose", "pedro"];
+					array2 = ["agostina", "julieta", "dámaris", array1];
+					for (let array in array2) {
+						if (array == 3) {
+							for (let array of array1) {
+								document.write(array + "<br>");
+							}
+						} else {
+							document.write(array2[array] + "<br>");
+						}
+					}
+
+				</script>
+			</li>
+			<li><b>SENTENCIA label:</b>
+				<script type="text/javascript">
+					forCoso: // LE PONE NOMBRE AL BUCLE
+					for (let i of array2) {
+						document.write(i + " ,");
+						break forCoso;
+					}
+					// Y saltea la 'iteración' de todo el BUCLE entero
+				</script>
+			</li>
+		</ul>
+		<div>
+			<h3><a name="funciones"></a>14) Funciones</h3>
+
+			hay varias formas de crear, vamos a 	empezar por cómo se hacían antes
+
+			una función es una porción de código
+
+
+			<script>
+				respuesta = "Había una vez ";
+				function historiaInicio() {
+					respuesta += prompt("Crea tu propia historia: Había una vez... ");
+					alert(respuesta);
+				}  
+				function historia() {
+					respuesta += " " + prompt("continua.."	);
+					alert(respuesta);
+				}
+				historiaInicio();
+				historia();
+				historia();
+
+			</script>
+
+			otra forma podría ser asignandola en variables
+
+			<script type="text/javascript">
+				
+				// FUNCIÓN: Declarar-crear-definir
+				saludar = function() {
+					respuesta = prompt("¿Estás?");
+					if (respuesta == ["si" || "sí" || "no"]) {
+						alert("sigamos")
+					} 
+					else {
+						alert("¡Detente ahí entonces!")
+					}
+				}
+
+				// FUNCIÓN: Llamar
+				saludar();
+
+			</script>
+			<h4>Return</h4>
+
+			la función va a devolver/retornar; una cosa es lo que HACE la función, y otra cosa lo que RETURN. Se convertirá en algo luego de que la función se realice.
+
+			<script type="text/javascript">
+				
+				function saludo() {
+					alert("hola");
+					return 3; 
+				}
+
+				let saluda = saludo();
+				document.write(saluda);
+
+				// sin el RETURN, en la variable devolvería "undefined"
+
+				function casisaludo() {
+					alert("hola sin return");
+				}
+
+				let casisaluda = casisaludo();
+				document.write(casisaluda);
+
+			</script>
+			<h4>parametros</h4>
+			las funciones, no son tales sin parametros
+
+			<script type="text/javascript">
+				function suma(num1,num2) {
+					let res = num1 + num2;
+					document.write(res + ", ");
+				}
+
+				suma(5,6);
+				suma(7,9);
+
+				function resta(num3,num4) {
+					let res = num3 - num4;
+					return res
+				}
+				resultado = resta(10,5);
+				document.write(resultado);
+
+				function saludando(nombre) {
+					let frase = `Hola ${nombre} cómo estas`;
+					document.write(frase)
+				}
+				saludando("jalea");
+
+			
+			</script>
+
+			<h4>Funciones FLECHA</h4>
+			<script type="text/javascript">
+				const flecha = nombre=> `Hola ${nombre}`;
+				const flecha2 = (num1,num2)=> {
+					let frase = `Hola ${num1} y ${num2}`
+				}
+			</script>
+		</div>
+
+
+
+		- parametros
+		- scope: valor regional, valor universal (cuando los let estan dentro de la función, que son solo para esa función)
+		- funciones flecha
+
+		<a name="forEach"></a>
+		15) ForEach 
+		- sintaxis y uso
+		- ventajas respecto a for
+		- desventajas (Break, Continue)
+		
+
+	</div>
+</div>
+
+<div>
+	<h3>INDICE</h3>
+	<h4>1)</h4>
+	<h4>2)</h4>
+	<h4>X) funciones</h4>
+	<li><i>const</i>: </li>
+</div>
+
+<!-- ################################################################ 03 Programación orientada a objetos (POO) -->
+
+<div>
+	<h2>CAPITULO TERCERO</h2>
+	<h3><a name="poo"></a>Programación orientada a Objetos (POO)</h3>
+
+
+	15. POO
+	- definición y usos: paradigma (resolver los problemas de mejor forma)
+	- ejemplos
+
+	16. Conceptos básicos de POO
+	- clase: fábrica de objetos, como una receta-plantilla
+	- objeto: lo que crea la clase
+	- atributo: características, PROPIEDADES
+	- método: cosas que puede hacer nuestro objeto;
+	- constructor: función obligatoria
+	- instanciación: cuando creamos todo, podemos decir que la clase está "instanciada"
+	<br>
+	<br>
+
+</div>
+<div>
+	<script type="text/javascript">
+
+		class Animal {
+			constructor(especie,edad,color)// adentro le pasamos los parámetros que va a tener nuestra clase
+			{
+				this.esp = especie //this. es el objeto
+				this.edad = edad;
+				this.color = color;
+				this.info = `Soy ${especie} tengo ${edad} años y soy de color ${color}`;
+			}
+			
+			verInfo() {
+				document.write(this.info + '<br>');
+			}
+
+			ladrar() {
+				if(this.esp == "perro") {
+					document.write("¡Waw!" + "<br>");
+				} else {
+					document.write("No ladra, pues es " + this.esp + "<br>");
+				}
+			}
+			
+		}
+
+		// DEFINIR LAS CLASES CON CONST:
+		const perro = new Animal("perro", 5,"negro");
+		const gato = new Animal("gato",3,"marrón");
+
+		document.write(perro + " < nos indica que es un objeto"); // nos va a aparecer en el DashBoard: '[object Object]';
+		document.write(`<br><b style="color:red">Acá está el código donde nos aparece 'gato' en consola</b> ><br>`)
+		console.log(gato); // esto es para que nos lo muestre en consola, no aparece en el 'DashBoard';
+
+		// Para poder acceder a los parámetros, reemplazamos 'this' por el ej-animal;
+	
+		document.write(perro.color + "<br>")
+		document.write(gato.info + "<br>")
+
+// METODO: un método es una #función, pero dentro de una CLASE;
+// Creamos el 'this.verInfo' > que reemplazaría los 'document.write'
+
+		const loro = new Animal("pájaro",1,"verde")
+
+		loro.verInfo();
+
+// 17. Características de la POO
+		// a. Abstracción: intentar reducir lo mas que podamos el objeto, ejemplo Perro: raza, color, tamaño ; no caminar lento, despacio, rápido -> creamos "caminar"
+		// b. Modularidad: separar en pedacitos el problema;
+		// c. Encapsulamiento: hacer que todos los datos estén privados, encapsularlos
+		// d. Polimorfismo: capacidad que tiene un objeto para comportarse distinto, por sus propiedades. Cómo un objeto se comparta distinto al resto, por sus propiedades.
+		// e. Jerarquía: 
+			// (d,c y d) -> no hace falta trabajar con palabras especí
+			// conceptos a llevar a código
+
+		perro.ladrar();
+		gato.ladrar(); 
+
+
+// Otros conceptos de POO
+		// Herencia "stence"
+		class Gato extends Animal {
+			constructor(especie,edad,color,cualidad){
+				super(especie,edad,color);
+				this.cualidad = cualidad;
+			}
+			maullar(){ // YA QUE NO ESTÁ USANDO NINGUNA DE LAS PROPIEDADES
+				document.write("¡MEAU!" + "<br>")
+			}
+			static ronronear(){
+				document.write("¡RRRRR!" + "<br>")
+			}
+		}
+		
+
+		const doris = new Gato("mestiza",5,"tricolor","loquilla");
+		doris.maullar();
+
+		// Metodos estáticos "static": no necesita que la clase se defina, para poder ser creado ("static" agregado arriba, en 'maullar')
+
+		Gato.ronronear(); // Escribimos la CLASE (en este caso 'Gato'), y realiza método no mas.
+
+		// Métodos accesores (Getters, Setters): los GETTERS son para obtener un valor, los SETTERS para modificarlo o definirlo.
+		class Africa extends Animal {	
+			constructor(especie,edad,color,info){
+				super(especie,edad,color);
+				this.tamaño = null;
+			} 
+
+			// estamos modificando el VALOR de una PROPIEDAD de la CLASE
+			set setEdad(años){
+				this.edad = años;
+			}
+			set setColor(color){
+				this.color = color;
+			}
+			get getColor(){
+				return this.color
+			}
+			verInfo2(){
+				document.write(elefante.info)
+			}
+		}		
+
+		// Acá definimos elefante dentro de la clase "Africa"
+		const elefante = new Africa("Elefante","desconocida","Gris");
+		elefante.setEdad = 2;
+		elefante.setColor = "Rosa";
+		elefante.verInfo(); // me tira los parametros viejos, no llega a modificarle la edad y el color en el "ver info"
+		console.log(elefante);
+		document.write(elefante.getColor + "<br>");
+		elefante.verInfo2(); // me sigue tirando los parámetros viejos
+
+	</script>
+</div>
+
+
+<!-- ################################################################ 04 Cadenas -->
+
+<div>
+	<a name="cadenas"></a>
+	<script type="text/javascript">
+	
+// 20) METODOS DE CADENAS
+
+		function metodoCadena(nom,com){
+			document.write(`<b> ${nom}()</b>: ` + `<i style="background:yellow">${com}</i>` + "<br>")
+		}
+
+		// function mCadena (nombre,numero){
+		// 	document.write(`<b style="background:green">"${nombre}"</b> :` + cadena +numero+.nombre)
+		// }
+
+		// .concat(); junta dos o mas cadenas y retorna una nueva
+		let cadena1 = "cadena de prueba;";
+		let cadena2 = new String("cadena de prueba;") // esto JS lo hace por defecto, no hace falta escribirlo; pero puse esto para entender que un texto es un OBJETO
+
+		resultado = cadena1.concat(" A partir de aquí sumando con CONCAT");
+		document.write(resultado + "<br>");
+
+		let cadena3 = " sumando de otra forma con CONCAT";
+		metodoCadena("concat",cadena2.concat(cadena3));
+
+	// BUSCAR CADENAS Y DEVULVERNOS UN VALOR:
+
+		// startsWith(); si una cadena comienza con los caracteres de otra cadena, devuelve true, sino devuelve false.
+		metodoCadena("startWith",cadena1.startsWith(cadena2));
+
+		// endsWith(); si una cadena termina con los caracteres de otra cadena, devuelve true, sino devuelve false.
+		metodoCadena("endsWith",cadena2.endsWith(cadena1));
+
+		// includes(); si una cadena puede encontrarse dentro de otra cadena, devuelve true, sino devuelve false.
+		metodoCadena("includes",cadena3.includes("sumando"));
+
+		// indexOf(); devuelve el indice del primer caracter de la cadena, si no existe devuelve '-1'.
+		metodoCadena("indexOf",cadena3.indexOf("otra"));
+
+		metodoCadena("indexOf",cadena2[12]); // Para elegir ese caracter 
+
+		// lastIndexOf(); deuelve el último índice del primer caracter de la cadena
+		metodoCadena("lastIndexOf",cadena3.lastIndexOf("a"));
+		metodoCadena("lastIndexOf",cadena3.lastIndexOf("A"));
+
+	// RELLENAR
+
+		// padStart(cantidad de caracteres para rellenar, "con qué rellenar"); [propuesta de Estandar/ECMA] - Rellenar cadena al principio con los caracteres deseados.
+
+		metodoCadena("padStart",cadena3.padStart(40,2));
+
+		// padEnd(); [propuesta de ECMA/Estandar] - Rellenar cadena al final con los carácteres deseados.
+		metodoCadena("padEnd",cadena3.padEnd(40, 1234));
+
+
+		// repeat();
+		let cadena4 = "1234 ";
+		document.write("<br>" + cadena4.repeat(2) + "<br>");
+
+		// split(); divide la cadena como le pidamos
+		let cadena5 = "harina gato perro";
+		let resu = cadena5.split(" ");
+		document.write(resu + "<br>");
+		document.write(resu[2] + "<br>");
+
+		// .substring(); me muestra desde, hasta donde le digo
+		metodoCadena("substring()",cadena5.substring(2,5))
+
+		// .toLowerCase(); lo convierte en minúscula
+		let cadena_mayuscula = "HOLA SOY MAYÚSCULAS";
+
+		document.write(cadena_mayuscula.toLowerCase() + "<br>");
+
+		// .toUpperCase(); todo a máyúscula.
+		document.write(cadena5.toUpperCase() + "<br>");
+
+		// .toString(); a cadena de texto.
+		let nums = 345;
+		document.write(nums * 2 + "<br>");
+		document.write(nums.toString() * 2 + "<br>"); // JS lo está convirtiendo en numero
+		let ress = nums.toString();
+		document.write(2 + ress + "<br>"); // acá se puede ver que los está juntando ; acá sí tuve que hacer el caminito de no ponerlo en el "document.write" el método, sino que identarlo antes.
+		let array = ["hola","chao"]
+		document.write(array.toString() + "<br>"); // convirtiendo un array en un string
+		document.write(array.toString()[3] + "<br>"); 
+
+		// .length >> es una propiedad, de los ARRAYS y de los STRINGS
+		document.write("<b style='color:red'>lengh</b> " + cadena_mayuscula.length + "<br>");
+
+		// .trim >> le elimina los espacios.
+		let espacios = "   ho   ";
+		let resultado2 = espacios.trim();
+		document.write(resultado2.length + "<br>");
+		document.write(espacios.length + "<br>");
+
+		// .trimEnd(); elimina los espacios del final
+		document.write("<b>trimEnd: </b>" + espacios.trimEnd() + "<br>");
+
+		// .trimStart(); elimina los espacios del principio
+		document.write(espacios.trimStart());
+
+		//valueOf(); retorna el valor primitivo de un objeto string.
+		document.write(espacios.valueOf()); 
+		document.write(array.valueOf() + "<br>");
+
+
+		var espacioss = "   ja   "
+	</script>
+
+<!-- 21) METODOS DE Arrays >> -->
+	<h3><a name="metodosArrays"></a>21) METODOS de Arrays</h3>
+	
+	<!-- Son iguales a los de Sring, solo que se aplican a un Array -->
+	<script type="text/javascript">
+
+		let array1 = ["hola", "gato", 5, "perro"];
+		document.write(`<br> <b>Array1: </b> ${array1} <br>`);
+		let array2 = ["gato",1,5,"perro"]; // Accesores - join().
+		let array3 = [10,1,2,3,4]; // Accesores - join().
+		let resss = array3.join(); // Accesores - join().
+		let array4 = [1,2,3,4,5,6,7]; // Accesores - slice().
+		let res1 = array1.filter(array => array.length > 3); // De Repetición - filter().
+
+		function metodoArray(nombre,comando){
+			document.write(`<br><b>${nombre}:</b> ` + comando + "<br>");
+			document.write("<b>Array1: </b>" + array1 + "<br>")
+		}
+
+		// _______ Transformadores _______
+			// .pop(); elimina el último elemento, y lo muestra;
+			metodoArray("pop()",array1.pop());
+
+			// .shift() elimina el primero, y lo muestra;
+			metodoArray("shift()",array1.shift());
+
+			// .push() agrega un elemento al array al final de la lista, y me devuelve la nueva cantidad de elementos;
+			metodoArray("push('sustancia',6)",array1.push("sustancia",6));
+
+			// .reverse() >>> ESTE LO CAMBIA
+			metodoArray("reverse()",array1.reverse());
+
+			// .unshift(); agrega uno o más elementos al inicio del array y nos devuelve la nueva longitud del array
+			metodoArray("unshift(1,3)",array1.unshift(1,3));
+			metodoArray("unshift(0)",array1.unshift(0));
+			metodoArray("unshift(1,2,3,4,5)",array1.unshift(1,2,3,4,5));
+
+			// .sort(); ordena los elementos de un array (arreglo) localmente y devuelve el arreglo ordenado lexicograficamente (012..abc..)
+			metodoArray("sort()",array1.sort());
+
+			// .splice(); cambia el contenido del array 
+			metodoArray("splice(start,elimina)",array1.splice(10,2));
+			metodoArray("splice(start,elimina,agrega",array1.splice(5,3,"esto","lo agregamos"));
+			metodoArray("splice(start,no-eliminamos,desde-el-final)",array1.splice(-1,0,"AL-FINAL"));
+
+
+		// _______ Accesores _______
+			// join() - une todos los elementos de una matriz (y objeto similar) en una cadena y la devuelve. > lo convierte en una cadena de texto
+			metodoArray("join()",array2.join());
+			document.write("Probando mostrar solo 2 elementos: " + array2[0] + "<br>");
+			metodoArray('join(" - ")',array1.join(" - "));
+			document.write(array1[5])	
+
+				// no me venía funcionando antes la seleccion de los elementos de la cadena de texto, y puesto de esta manera sí funciona >>>
+			document.write(resss[0]);
+
+			// slice() - devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluído).
+			metodoArray("slice()",array4.slice(1,4));
+
+			// metodos ya vistos en cadenas: toString(), indexOf(), lastIndexOf(), includes()
+
+
+		// _______ De Repetición _______
+
+			// forEach() - ejecuta la función indicada una vez por cada elemento del array.
+			document.write("<br><b>forEach():</b><br>");
+			array1.forEach(array => document.write(array + " // "));
+		
+			// filter() - crea un nuevo array con todos  // lo mismo, solo que nos permite crear un nuevo array con elementos con condición. // es como un BUCLE
+			document.write("<br><b>filter():</b><br>");
+			array1.filter(array => document.write(array + " // "));
+				// Hasta aquí se comporta de la misma manera que "forEach()". Pero puede hacer otras cosas >>>
+
+				// Se ejecuta solo si es que el elemento tiene mas de 3 letras, en este ejemplo.
+				document.write("<br><i>filter(array => array.length > 3)</i> = "+ res1);
+		
+	</script>
+
+	<h3><a name="math"></a>22) Objeto Math - Básico</h3>
+	
+	<!-- CODIGO JAVASCRIPT -->
+	<script type="text/javascript">
+		
+		function objetoMath(nombre,num,comentario){
+			document.write(`<b>${nombre}:</b> ` + num)
+			document.write(`<i> // ${comentario}</i><br>`)
+		}
+
+		// _______ METODOS _______
+
+			// sqrt()
+			objetoMath("sqrt(25)",Math.sqrt(25),"Devuelve la raíz cuadrada");
+
+			// cbrt()
+			objetoMath("cbrt(27)", Math.cbrt(27),"Devuelve la raíz cúbica");
+
+			// max() - recibe muchos números ## SOLO NUMEROS.
+			objetoMath("max(1,5,127,13)",Math.max(1,5,127,13),"Devuelve el más grande");
+
+			// min() - ...IDEM.
+			objetoMath("min(1,5,7)",Math.min(1,5,7),"Deuvleve el más chiquito");
+
+			// random()
+			objetoMath("random()",Math.random(),"Devuelve un número pseud-aleatorio entre 0 y 1.")
+
+			// round() 
+			let numero = Math.random()*100;
+			numero = Math.round(numero);
+			document.write("<b>round(): </b>" + numero + "<br>");
+
+			// floor()
+			objetoMath("floor(4.9)",Math.floor(4.9),"Redondea para abajo");
+
+			// fround() - Devuelve la "representación flotante de precisión simple más cercana de un número" (RFPS+ - 4 bytes) .
+			objetoMath("fround(9.444555666777888777888)",Math.fround(9.444555666777888777888),"Va a devolver 16 números (4 bytes)")
+
+			// trunc()- es como round(), pero elimina los decimales
+			objetoMath("trunc(9.888)",Math.trunc(9.888),"Elimina los decimales")
+
+
+		// _______ PROPIEDADES _______
+			// PI - Ratio de la circunferenia de un círculo respecto a su diámetro, aprox 3.14159 >>> también reduce a 4 bytes en "RFPS+ (16 caracteres)
+			objetoMath("PI",Math.PI, "Devuelve PI en 4 bytes");
+
+			// SQRT1_2 - raíz cuadrada de un 1/2; Equivalente, 1 sobre la raíz cuadrada de 2, aprximadamente 0.707.
+			objetoMath("SQRT1_2", Math.SQRT1_2,"Raíz cuadrada de 1/2");
+
+			// SQRT2 - Raíz cuadrada de 2, aproximadamente 1.414
+			objetoMath("SQRT2", Math.SQRT2, "Raíz cuadrada de 2");
+
+			// (constantes y logaritmos)
+			// E - Constante de Euler, la base de los logaritmos naturales: 2,718..
+			objetoMath("E", Math.E, "Constante de Euler");
+
+			// LN2 - Logaritmo natural de 2, aprox. 0,693.
+			objetoMath("LN2", Math.LN2, "Logaritmo natural de 2");
+
+			// LN10 - Logaritmo natural de 10, aprox. 2,303.
+			objetoMath("LN10", Math.LN10, "Logaritmo natural de 10");
+
+			// LOG2E - Logaritmo de E con base 2, aprox. 1,443.
+			objetoMath("LOG2E", Math.LOG2E, "Logaritmo de E con base 2");
+
+			// LOG10E - Logaritmo de E con base 10, aprox. 0,434.
+			objetoMath("LOG10E", Math.LOG10E, "Logaritmo de E con base 10");
+	</script>
+
+</div>
+
+<!-- ################################################################ 05 CONSOLA -->
+
+<!-- 17/12/22 16:30-.. -->
+<a name="consola"></a>
+<pre class="faltante">RESTA DESCOMENTAR el punto 26</pre>
+<script type="text/javascript">
+// 26) consola
+
+		// funciones de registro
+
+// console.assert() >> no se usa mucho, nos ejecuta o no depende de lo que pongamos en paréntesis, nos marca error sino. (NO ESTANDAR)
+
+	// console.assert(5 > 3); con este no pasa nada
+	// console.assert(5 < 3); con este nos marca error
+
+// console.clear() >> limpia la consola, por ejemplo con YOUTUBE, que nos manda varios avisos x consola
+
+// console.error("podemos poner el mensaje del error")
+
+// console.info("") parecido a .log, solo que es informativo, a diferencia de .log que es DEPURATIVO. Emite un mensaje informativo a la Conola Web. En Firefox y Chrome, se muestra un pequeño ícono "i" jnto a estos elementos en el registro de la Consola Web.
+
+// console.log() >> muestra un mensaje en la consola web (o del intérprete JavaScript).
+
+// console.table() >> Esta función toma un argumento obligatorio: data, que debe ser un array o un objeto, y un parámetro adicional: columns y nos muestra una tabla en consola
+
+// console.warn() >> es como el error, pero en vez de error te tira una advertencia
+
+// console.dir() >> despliega una lista interactiva de las propiedades del objeto JavaScript especificado. (NO ESTANDAR)
+
+
+		// funciones de conteo
+
+// console.count() >> nos muestra cuántas veces se usó esa función.
+
+// console.countReset() >> se resetea
+
+
+		// funciones de agrupación
+
+// console.group("si quiero, nombre del grupo") >> se creo un grupo que puedo abrir y cerrar
+
+// console.groupEnd() >> se termina el grupo, sigo para atrás
+
+// console.groupCollapsed() >> muestra el grupo cerrado cuando empezamos.
+
+
+		// funciones de temporización
+
+// console.time() >> inicia un temporizador
+
+// console.timeLog() >> Registra el valor actual de un temporizador
+
+// console.timeEnd() >> Detiene un temporizador
+
+
+		// modificar el estilo del texto
+
+// console.log("%cHola gente","color:red;background:black;padding:20px;etc") >> pero las medidas y cambiar el display no se pueden modificar, el padding si se puede y esas cosas; se pueden hacer muchas cosas pero con ciertas limitaciones
+
+</script>
+
+
+<!-- ################################################################ 06A DOM -->
+
+<div>
+	<section> <!-- 27 DOM -->
+		<h3><a name="dom"></a>27) DOM (document object model)</h3>
+		<ul>
+			<li>Definición: interfaz, interfaz. ARBOL: </li>
+			<li>Nodo - un nodo en el DOM es cualquier etiqueta del cuerpo, como un párrafo, el mismo body o incluso las etiquetas de una lista. // no siempre son etiquetas, a veces sueles ser otro tipo de elementos.</li>
+			<ul>
+				<li>* Document: el nodo document es el nodo raíz, a partir del cual derivan el resto de nodos.</li>
+				<li>* Element: nodos definidos por etiquetas html.</li>
+				<li>* Text: el texto dentro de un nodo elemnet se considera un nuevo nodo hijo de tipo text (texto).</li>
+				<li>* Atribute: los atributos de las etiquetas definen nodos, (en JS no los veremos como nodos, sino como información asociada al nodo de tipo element)</li>
+				<li>Comentarios y otros: los comentarios y otros elementos como las declaraciones doctype en cabecera de los documentos HTML generan nodos.</li>
+			</ul>
+		</ul>
+	
+		<p style="background: red;color:white">Los nodos, son los cuadraditos</p>
+		
+		<div class="position">
+			<div class="position-box" style="top: 130px; 
+			left: 40px; background: red">DOM</div>
+			<div class="position-box" style="top: 90px; 
+			left: 120px; background: red">HTML</div>
+			<div class="position-box" style="top: -10px;left:200px; background: green">HEAD</div>
+			<div class="position-box" style="top: 70px;left:200px; background: blue">BODY</div>
+			<div class="position-box" style="background:green; top:-120px; left:280px">TITLE</div>
+			<div class="position-box" style="background:green; top:-100px; left:280px">META</div>
+			<div class="position-box" style="background:blue; top:-80px; left:280px">SCRIPT</div>
+			<div class="position-box" style="background:#0af; top:-50px; left:280px">FORM</div>
+			<div class="position-box" style="background:#0af; top:-90px; left:360px">INPUT</div>
+		</div>
+	</section>
+
+	<p>
+		Los cuadraditos son los nodos, todo estaría dentro del DOM; dentro de las etiquetas... los nodos también serían los atributos; PERO PARA JS NO! 
+	</p>
+
+	<section> <!-- 28) Document - met. de seleccion de elem. -->
+		<h3>28) Document - métodos de seleccion de elementos</h3>
+		<ul>
+			<li>document. getElementById() - Selecciona un elemento por ID</li>
+			<li>getElementsByTagName() - selecciona todos los elementos que coincidan con el nombre de la etiqueta especificada.</li>
+			<li>querySelector() - Devuelve el primer elemento que coincida con el grupo especificado de selectores.</li>
+			<li>querySelectorAll() - Devuelve todos los elementos que coincidan con el grupo especificado de selectores.</li>
+		</ul>
+		<p>
+			<b>Un NodeList no es un ARRAY</b><br>
+			document.getElementById("parrafo") <p id="parrafo"></p><br>
+			document.getElementsByTagNAme("p"): seleccionariamos todas las etiquetas "p"<br>
+			document.querySelector() >> por los selectores "class"; acordarse del "." en el caso de las .class y del "#" en el caso de las #id. // elige el primero ; sería por ejemplo <b>document.querySelector(".parrafo")</b><br>
+			document.querySelectorAll() >> selecciona todos los elementos que coincidan con el selector; elige todos;<br>
+			Si escribimos:<br>
+			          parrafo = document.querySelectorAll(".parrafo");<br>
+			          document.write(parrafo[5]);<br>
+			          >>>>> nos elije el 5to elemento, pero lo imprime "indicandome qué es": [object HTMLparagraph..].<br>
+		</p>
+	</section>
+	<section> <!-- 29) Metodos para definir.. -->
+		<h3>29) Metodos para Definir, Obtener y Eliminar valores de atributos</h3><br>	
+		<input type="text" class="rangoEtario">
+		<script type="text/javascript">
+			const rangoEtario = document.querySelector(".rangoEtario");
+		</script>
+		<br><br>
+		<input type="button" value="rango etario" onclick='document.write(rangoEtario)'>
+		<ul>
+			<li>setAttribute() - Modifica el valor de un atributo</li>
+			<script type="text/javascript">
+				rangoEtario.setAttribute("type","range");
+				// Acabamos de modificar el tipo de atributo de TEXT a RANGE; del CLASS "rangoEtario"
+
+				// no solo modifica, sino también agrega.
+
+			</script>
+			<li style="display: inline; padding-right:10px">getAttribute() - es para OBTENER el atributo</li><input type="button" value="imprimir" onclick="document.write(rangoEtario.getAttribute('type'));">
+			<li>removeAttribute() - Remueve el valor de un atributo.</li>
+		</ul>
+	</section>
+	<section> <!-- 30) Atributos globales -->
+		<h3><a name="atributos-globales"></a>30) Atributos globales</h3>
+		<ul>
+			<li>Hay otros <b>atributos globales</b> que no fueron incluidos en esta lista, como el <i>class</i> y el <i>style</i>.</li>
+			<li>class - lista de clases del elemento separadas por espacios</li>
+			<li style="display: inline-block;" contenteditable="true">contentEditable - </li>
+			<li>dir - INDICA LA DIRECCIONALIDAD DEL TEXTO ; tiene tres atributos: ltr (left to right / x defecto) ; rtl (right to left) ; hay uno mas que no recomienda el tutor.</li>
+			<li>hidden - INDICA SI EL ELEMENTO AÚN NO ES, O YA NO ES, RELEVANTE. si está definida, no se muestra sin importar el valor que tenga (t/f).</li><a hidden="" href="gmail.com" class="jiden">GMAIL</a>
+			<li>tabindex - indica si el elemento puede obtener un focus de input. <i tabindex="1">Si le pongo letras</i> <i tabindex="f">no sirve</i> en cambio con los número sí. <i tabindex="2">además</i> de que cuando <i tabindex="3">apretamos tab</i>, nos cambia el <i tabindex="4">orden</i></li>
+			<li class="lii" title="normal">title</li>
+			<b class="js-text"><script>
+				const jiden = document.querySelector(".jiden");
+				jiden.removeAttribute("hidden");
+				const lii = document.querySelector(".lii");
+				lii.setAttribute("title","título cambiado");
+			</script></b>
+		</ul>
+	</section>
+	<section> <!-- 31) Atributos de Inputs -->
+		<h3><a name="atributos-input"></a>31) Atributos de Inputs</h3>
+		<ul>
+			<li>- className: </li><input type="button" class="input-normal" value="botón?" name=""> 
+			<b class="js-text"><script type="text/javascript">
+				const input = document.querySelector(".input-normal");
+				document.write(input.className); // muestra el class
+				
+		
+
+			</script></b><br>
+			<li>- value</li><b class="js-text"><script type="text/javascript">document.write(input.value); // muestra el value</script></b><br>
+			<li>- type</li><b class="js-text"><script type="text/javascript">document.write(input.type = "number"); // también podemos modificarlo directamente.</script></b><br>
+			<li>- accept</li><input type="file" name="" value="Adjuntar" class="soloPNG">
+			<b class="js-text"><script type="text/javascript">
+				const soloPNG = document.querySelector(".soloPNG");
+				soloPNG.accept = "image/png"; // Solo va a aceptar PNG.
+			</script></b><br>
+			<li>- form</li> <!-- Nos permite ejecutar un INPUT dentro de un FORM-->
+			<form id="formulario">
+				<input type="text" name="">
+				<input type="submit" name="">
+			</form>
+				<input type="submit" name="" form="formulario"><br>
+			<li>- minlengh: la mínima cantidad de caracteres que tiene que tener un INPUT.</li>
+			<form>
+				<input type="text" name="" class="mC" minlength="5">
+				<input type="submit" name="">
+			</form><br>
+			<li>- placeholder: el texto que aparece antes de escribir en el INPUT de texto</li>
+			<li>- required: es un campo requerido, si lo dejo vacío "input.required = ''" entonces no pasa nada, mínimo un espacio >> "input.required = '(espacio)'"</li>
+		</ul>
+	</section>
+	<section> <!-- 32) Style attributs -->
+		<h3>32) atributos de Style</h3>
+			<p class="modificarStyle">Es básicamente modificar algo de CSS del atributo; como por ejemplo ahora, que modifiqué este texto a <b>rojo</b> desde JavaScript.</p>
+			<ul>
+				<li>Utiliza propiedades camelCase, como ocurre con el "backgroundColor" que modifico desde JS.</li>
+			</ul>
+			<script type="text/javascript">
+				const modificarStyle = document.querySelector(".modificarStyle");
+				modificarStyle.style.color = "red";
+				modificarStyle.style.backgroundColor = "yellow";
+			</script>
+		</section>
+	</section>
+
+	No se donde quedaron los otros números
+
+	<section> <!-- 35) classList -->
+		35) Clases, "classList" y métodos de classList:<br>
+		definición y usos<br>
+		add() - añade una clase<br>
+		remove() - remueve una case<br>
+		item(1) / item(4) / etc - devuelve la clase del indice especificado (cuando es: "class='grande lisa titulo'")<br>
+		contains("grande") - verifica si ese elemento posee o no, la clase especificada; nos devuelve "true" o "false":	<s><script type="text/javascript">
+			modificarStyle.classList.add("loca");
+
+			let item = modificarStyle.classList.contains("loca");
+			if (item) {
+				document.write("la clase existe")
+			} else {
+				document.write("la clase NO existe")
+			}
+		</script></s><br>
+		
+		toogle() - si no tiene la clase especificada, la agrega, si ya la tiene, la elimina: <i class="prueba">prueba</i><br><script type="text/javascript">
+			/* 
+			ERRORES DEL TOOGLE
+			let mS = document.querySelector(".prueba")
+			mS.classList.toogle("loca"); // en este caso la saca
+			modificarStyle.classList.toogle("bkn",true); // en este caso, si la tiene no la saca.
+			modificarStyle.classList.toogle("bkn",false); // en este caso la sacar siempre, pero no la agrega si es que no la tiene.
+			estos dos últimos parámetros no los soporta INTERNET EXPLORER o versiones anteriores a OPERA 12. 
+			*/
+
+		</script><br>
+		<b>replace()</b> - reemplaza una clase por otra: nos reemplaza la clase, no mucha ciencia más.<br>
+	</section>
+</div>
+
+
+<!-- ################################################################ 06B CONSOLA -->
+
+<div>
+	<section> <!-- 36) Obtención y modificación de elementos -->
+		<h3>36) Obtención y Modificación de Elementos (en HTML)</h3>
+		<ul>
+			<li><b class="culipato">textContent:</b> devuelve el texto de cualquier nodo
+			<s><script type="text/javascript">
+				const culipato = document.querySelector(".culipato");
+				let culipata = culipato.textContent;
+				document.write(culipata);
+				document.write("<br>" + "<b>'innerText;'</b> > " + culipato.innerText);
+				document.write("<br>Tampoco usaremos <b>'outerText;'</b> > "+ culipato.outerText);
+			</script></s></li>
+			<li>innerHTML si nos muestra la info en "alert" por ejemplo, las etiquetas html; a diferencia del "innerText"</li>
+			<li>outerHTML > nos muestra también la etiqueta que lo contiene ; el elemento HTML completo.</li>
+		</ul>
+	</section>
+
+	<section class="contenedor"> <!-- 37) Creación de Elementos -->
+		<h3>37) Creación de Elementos:</h3>
+		- createElements(): <br>
+		- createTextNode(): <br>
+		<script type="text/javascript">
+			const contenedor = document.querySelector(".contenedor");
+			const itemLi = document.createElement("LI"); // Tiene que ser en MAYÚSCULA.
+			const itemText = document.createTextNode("Este es un ítem de la lista") // Cualquiera de las dos opciones las podemos mostrar en console.log().
+
+		</script>	
+		<br>
+		<!-- ¿Cómo hacer para crear un ítem dentro de otro ítem? -->
+		<script type="text/javascript">
+			itemLi.innerHTML = itemText;
+			console.log(itemLi);
+		</script>
+
+		
+		- appendChild(): <br>
+		los métodos de los CHILDS son los métodos que se aplican especialmente a los childs (hijos, lo que está adentro, ahora el SCRIPT es el child del SECTION);<br>
+		metodo para un child, porque estamos trabajando sobre el child, basicamente (así de simple). Si vamos a usar un métodos para agregar un hijo<br> <br>
+		<script type="text/javascript">
+			itemLi.appendChild(itemText);
+			// console.log(itemLi) // REPETIDO	
+			contenedor.appendChild(itemLi);
+
+			// Otro camino posible es:
+			const itemm = document.createElement("LI");
+			itemm.innerHTML = "Este es otro elemento de la lista, pero no es un OBJETO así que no tiene las mismas propiedades que un 'textNode'"; // Este no es un OBJETO.
+			contenedor.appendChild(itemm);
+		</script>
+
+		<br><br>
+		ELEMENTOS:<br>
+		un elemento no puede ser agregado dos veces, ya que es un objeto; tiene identificadores y es único (Si pretendemos repetir la operación con un BUCLE, el DOM va a hacer que consumamos muchos recursos; ya que borra todo y lo vuelve a "escribir")<br><br>
+	
+		- createDocumentFragment()<br> 
+		para no hacer esto:<br>
+		<script type="text/javascript">
+			for (i = 0; i < 20; i++){
+				const iteem = document.createElement("LI");
+				iteem.innerHTML = "Nuevo elemento de la lista";
+				contenedor.appendChild(iteem);
+			}
+		</script>
+		<br><br>
+		utilizamos este método.<br>
+		<br>
+		<script type="text/javascript">
+			const fragmento = document.createDocumentFragment();
+			for (i = 0; i < 20; i++){
+				const ittem = document.createElement("P");
+				ittem.innerHTML = "Nuevo elemento de la lista, sin consumir tantos recursos";
+				fragmento.appendChild(ittem);
+			}
+			console.log(fragmento);
+			contenedor.appendChild(fragmento); 
+
+		</script>
+
+	</section>
+	<div class="contenedor"></div>
+
+	<section> <!-- 38) Obtención y modificación de Childs (hijos) -->
+		<h3>38) Obtención y modificación de Childs (hijos)</h3>
+		-firstChild: los espacios en HTML son "texto"; entonces contarían como 1er hijo <br><i>"{const primerHijo = contenedor.firstChild;}"</i><br><br>
+		- lastChild; idem pero con el último<br>
+		- firstElementChild; ahora no nos importan los espacios en HTML<br>
+		- lastElementChild<br>
+		- childNodes: nos devuelve un nodeList, no un ARRAY. No podemos usarlo con ".push", pero si podemos recorrerlo con ".forEach", porque es un OBJETO ; también<br>
+		<i>hijos.forEach(hijo => console.log(hijo));</i><br><br>
+		- children: solo nos devuelve las etiquedas HTML (no devuelve los nodos text, deespacios entre etiquetas<br>
+		La colección HTML no se puede recorrer con ".forEach"; lo podemos recorrer con un "for .. in":<br>
+		for (hijo <b>in</b> hijos){<br>
+		console.log(hijo)<br> <!-- nos devuelve el indice -->
+		}<br><br>
+		for (hijo <b>of</b> hijos){...} <br> <!-- nos devuelve los nombres -->
+	</section>
+	<section> <!-- 39) Meth: childs ; parents ; siblings -->
+		<h3>39) Childs (hijos)</h3> 
+		<h4>replaceChild() + hasChildNodes()</h4>
+		<article class="concuchara">
+			<h5 class="h5">Con cuchara o contenedor</h5>
+		</article>
+		<b style="color:blue"><script type="text/javascript">
+			const concuchara = document.querySelector(".concuchara");
+			const parraff = document.createElement("P");
+			parraff.innerHTML = "Parrafo";
+			const h5_nuevo = document.createElement("H5");
+			h5_nuevo.innerHTML = "Título";
+
+			const h5_antiguo = document.querySelector(".h5"); // OBJETO
+			concuchara.replaceChild(h5_nuevo,h5_antiguo); 
+
+			//hasChildNodes() Devuelve F/T. 
+			let answer = concuchara.hasChildNodes(); // VARIABLE simple
+
+			if (answer) {
+				document.write("El elemento no tiene hijes");
+			} else {
+				document.write("El elemento tiene hijes")
+			}
+		</script></b><br> 
+		<h4>removeChild()</h4> <!-- IDEM -->
+
+		<h3>40) Parents (padres)</h3> <!-- Ambos muy similares -->
+		<h4>parentElement</h4> <!-- selecciona el xadre ELEMENTO -->
+		<h4>parentNode</h4> 
+
+		 <br>
+		41) Siblings (hermanes) + Extras(nodos)<br>
+		<script type="text/javascript">
+			document.write("<b>nextSibling:</b> " + concuchara.nextSibling + "<br>");
+			document.write("<b>previousSibling:</b> " + concuchara.previousSibling+ "<br>");
+			document.write("<b>nextElementSibling:</b> " + concuchara.nextElementSibling + "<br>");
+			document.write("<b>previousElementSibling:</b> " + concuchara.previousElementSibling + "<br>");
+			document.write("<b>concuchara.closest('.contenedor'):</b> selecciona el elemento ascendente más cercano");
+		</script>
+		<br>
+		42) Nodos - Extras
+		<script>
+			// document.write("<b>closest:</b>" + concuchara.closest() + "<br>")
+		</script>
+
+
+		Lo que vamos a ver dom-traversing (exploración de los nodos)
+		es del 39 al 43, para finalizar con el capítulo.
+
+	</section>
+	<section> <!--  -->
+		
+	</section>
+</div>
+
+<!-- ################################################################ 07 Window -->
+
+<section>
+    <article>
+        <h2>w3schools TUTORIAL</h2>
+        <p>
+            1) home
+            2) Introducción
+            3) Where To
+        </p>
+    </article>
+    <article>
+        <!-- HABIA EMPEZADO A HACER EL RESUMEN ACA, PERO RECORDE EL INDEX DE /FORMACION; Y VOLVI ALLI -->
+    </article>
+</section>
+<section>
+    <script type="text/javascript">
+
+        // let youtubeURL = "https://youtube.com";
+        // let ventana = window.open(youtubeURL);
+
+        // window.open() > ABRIR UNA VENTANA EMERGENTE CON ESE LINK:
+        // window.open("https://youtube.com")
+
+        // window.close() > CERRAR UNA VENTANA:
+        // ventana.close();
+
+        // window.alert() ABRIR UN "alert":
+        // window.alert("rancio"); 
+        // ya no se dice más antecediendo el "window", directamente "ALERT." y listo
+
+        
+        //confirm("estas seguro que deseas cerrar la ventana");
+        // nos devuelve FALSE y TRUE
+        // respuesta = confirm("...")
+        // if respuesta = true { .. }
+
+
+        
+
+
+
+
+    </script>
+</section>
+<section>
+
+    MID LEVEL
+
+    capitulo 7: DOM - window
+    objeto mas importante en la jerarquia
+
+    es un objeto de Javascript
+    hasta el DOM depnede de window
+    esta en la mas alta jerarquia, todos los otros elementos dependen de el;
+    es la ventana en sí
+    
+    42) (A: window) Introducción a Window
+        - Hereda las propiedades de EventTarget
+        - open() > window.open("link") > abre una "ventana emergente"
+        - close() > ventana.close() (asignandole un valor, EJEMPLO "ventana", al método "window.open(link)")
+        - closed > boolean > larga true or false; con una función se puede armar un mensaje;
+        name > window.name (return the name property_propiedad_) ; window.name = blabla (set the name property)
+        stop() > window.stop(); > stop the loading of a window
+        alert() > ya lo he probado al principio del curso
+        print() > window.print() >> nos deja imprimir con JS; 
+        prompt() > este lo hemos usado varias veces también. >> nos pide un dato, y lo convierte en STRING (aunque sea un número)
+        confirm()
+        
+       
+        (B: screen y scroll) >  propiedades solo de lectura
+        screen >> window.screen >> es uno de los tantos objetos que tiene windows >> devuelve una referencia al objeto de pantalla asociado con la ventana
+        screenLeft >> devuelve distancia horizontal entre el borde izquierdo del navegador y el borde izquierdo de la pantalla
+        screenTop >> devuelve distancia vertical entre el borde superior del navegador y el borde superior de la pantalla
+        scrollX >> devuelve el número de píxeles que el documento se desplaza actualmente horizontalmente
+        scrollY >> "" verticalmente
+        scroll() >> dezplaza la ventana a un lugar particular del documento
+
+        minimize() - minimiza la ventana. >> este no tiene más soporte
+        resizeBy() - cambia el tamaño de la ventana actual a una cantidad específica
+        resizeTo() - redimensiona dinámicamente la ventana.
+        moveBy() - mueve la ventana en una ubicación relativa.
+        moveTo() - "" absoluta.
+
+        <!-- 43) .. -->
+        <!-- PROBAR TODOS LOS COMANDOS A CONTINUACIÓN-->
+        objetos barprop (objetos a los que podemos acceder a su visibilidad, booleanos; devuelven true o false)
+            _ locationbar
+            _ menubar
+            _ personalbar
+            _ scrollbars
+            _ statusbar
+            _ toolbar
+
+        <!-- 44 LOCATION -->
+			window.location.href 		[href (URL) de la página actual]
+			window.location.hostname 	[devuelve el nombre de dominio del servidor web]
+			window.location.pathname [ruta y nombre de archivo de la página actual]
+			windows.location.protocol [protocolo de web utilizado, http: o https:]
+			window.location.assign() [carga un nuevo documento]
+
+
+
+</section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!--
+	>>> Estos textos, son a rescatar para luego hacer apuntes
+	
+	I) reglamento (introducción) - {LISTO} 
+	II) desarrollo de paginas web: 
+		1) Estructura de un proyecto web - 
+			(a) PRIMER VIDEO: introduce en cómo usar los prorgamas de edición de texto.
+				* renderizar: lo que va a ver el usuario (como con los títulos, heading1, heading2, h3, ..)
+				* capa de presentación (css)
+				* customizar: (a lo que nosotres querramos, modificar los estilos y demás..)
+
+			(b) MODULO 1: como incluir imágenes en nuestro HTML Consola de Desarrollador Chrome (video 2):
+				* atributo: informacion complementaria (dentro de la etiqueta: <p ATRIBUTO=""></p>)
+				* Atributos de IMG: <img ALT="" HEIGHT="" WIDTH="">
+
+			(c) (video 3) Elementos de HTML
+				* elemento de bloque VS elemento de linea
+				* formularios (form)
+				* atributo FOR para la etiqueta LABEL, para un atributo ID de un INPUT
+				>>> un desarrollador tiene que saber manejar un formulario
+		
+			
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>ARGENTINA PROGRAMA 4.0</title>
+	<!-- (II.2.c.) Open graph data -->
+	<meta property="og:title" content="Titulo" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url"	content="http://www.example.com" />
+	<meta property="og:image" content="http://example.com/image.jpg" />
+	<meta property="og:description" content="Descripcion" />
+
+	<!-- VIEWPORT -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<img src="RUTA" alt="TEXTO ALTERNATIVO Que muestra, en caso de que la imágen no se cargue" >
+	<!-- INLiNE ELEMENT ; 0 margin -->
+	<span></span> 
+
+<!-- II) DESARROLLO DE PAGINAS WEB-->
+<!-- 1) Estructura de un proyecto web -->
+<!-- (c) video 3-->
+
+	<form action="" method=""> 
+	<!-- ACTION para el backend y el method tmbn ; GET (lo muestra en la barra de navegación, y funciona bien con el atributo NAME) ; POST, no lo muestra -->
+		<label for="nombre">Nombre</label>
+		<input id="nombre" name="nombre" type="text" placeholder="Ingrese su nombre">
+		<label>Apellido</label>
+		<input type="text" name="apellido" placeholder="Ingrese su apellido">
+		<input type="submit" vaue="Enviar">
+	</form>
+
+<!-- 2) Elementos multimedia -->
+<!-- a) VIDEO 1: -->
+<!--
+		* usar w3schools y developer mozilla
+		* chequear la compatibilidad en http://caniuse.com ; con los distintos navegadores
+-->
+
+<video width="320" height="240" controls>
+	<source src="movie.mp4" type="video/mp4">
+	<source src="movie.ogg" type="video/ogg">
+	Your browser does not support the video tag. Tu navegador no soporta este video, intentá acceder con un navegador más nuevo, o actualizar tu navegador actual.
+</video>
+
+<!-- pispear los ATRIBUTOS que puedo user, en MOZILLA DEVELOPER y en W3SCHOOLS-->
+
+<!-- (b) VIDEO 2: -->
+
+<!-- AUDIO -->
+<audio controls>
+	<source src="audio.mp3" type="audio/mpeg">
+	<source	src="audio.wav"	type="audio/wav">
+</audio>
+
+<!-- YOUTUBE -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zjggBpnN398" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<!-- 
+	(c) VIDEO 3 : WEB SEMANTICA
+Desarrollamos para el usuario, pero TAMBIEN para la web de google; 
+Cuáles son los elementos semánticos?? centrado en el usuario, sitio amigable, etc
+cuano elijamos una etiqueta, pensemos en qué valor semántico le estamos dando en el proyecto
+OG Protocol (open graph): cuando se comparte algo por whatsapp, la previsualización
+
+3) Capa de presentación (modulo III)
+
+(a) Video 1: introduccion a CSS
+
+Valor: ..
+CSS dentro del mismo documento, va dentro de HEAD. INLINE STYLES ; no sería la mejor práctica. Si hacemos una hoja de estilo aparte podemos utilizarla en varias páginas de HTML.
+-->
+
+<!-- (B) Video 2: Box model (Margin, border, padding, content) -->
+
+<!-- (C) Video 3: selectores, tipografías-->
+Tipografías de google fonts; ejemplos
+
+<!-- 4) EXTENDIENDO CSS Y SUS FRAMWORKS  
+		
+		*Frameworws = 
+		[SEGUN WIKIPEDIA 2023] Un entorno de trabajo (del inglés framework) o marco de trabajo es un conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como referencia, para enfrentar y resolver nuevos problemas de índole similar.
+		
+		[SEGUN EDIX] Se trata de una estructura o plantilla que los programadores utilizan en su día a día para desarrollar un software, crear una app, etc. Pero no solo lo utilizan ellos, los Digital Workers de otras disciplinas menos tech también se valen de frameworks para hacer su trabajo de forma más rápida. Porque de eso va el concepto, de ser más ágiles.
+
+
+
+		
+		Video 1: viewport
+		*****************
+
+		En este módulo trabajarás con los conceptos clave del responsive web design. Aprenderás cómo transformar tu página web, originalmente solo para desktop, en full-responsive; es decir, que se adapte a cualquier dispositivo y que se siga visualizando correctamente. 
+
+		A continuación, avanzarás con los frameworks más populares del mercado, de manera tal que, habiendo entendido los conceptos más importantes, puedas utilizarlos para avanzar rápidamente en el desarrollo full-responsive.
+
+
+		VIEWPORT = define el area visible de una página web
+
+		(...) cuaderno (...)
+
+		Video 2: @media ; media query
+		*****************************
+
+		Media queries (consultas de medios) = modificar cómo se ve la pantalla dependiendo del dispositivo
+		@media (incluído en CSS3)
+		- incluye propiedades si algún tipo de condición es verdadera
+
+-->
+
+<style>
+	body {
+		background-color: aquamarine;
+	}
+
+	@media only screen and (max-width: 600px) {
+		body {
+			background-color: lightblue;
+		}
+	}
+
+</style>
+
+<!-- Para hacer un sitio responsivo; VIEWPORT y los MEDIA QUERIES -->
+<!-- LIBRERIAS:
+getbootstrap.com
+get.foundation
+tailwindcss.com
+
+breackpoint = hasta dónde quiero que llegue y corte el tamaño de la pantalla.
+-->
+
+<!-- Video 3: Bootstrap: primeros pasos -->
+Cheatsheet ; googlear este tipo de cosas 
+
+breakpoints = anchos customizables 
+
+<!-- MODULO 5)
+
+
+	Video 1: Alojamiento y tipos de servidores
+	*********
+
+	TICMAS, servidor 
+internet > red de redes
+Dirección IP
+protocolo ipv4
+se está hablando de un nuevo protocolo, ipv6
+
+VIDEO 2: introducción a GIT
+***************************
+
+Herramientas de VERSIONADO de código fuente
+GIT: 2005; Linus Torvalds
+https://git-scm.com/docs/git-log  
+Leer la documentación
+
+VIDEO 3: Mas de GIT y versionado
+
+
+
+-->
+
+
+
+<br><br>
+<div>
+	En el formulario de la página de prueba; agregar los obligatorios
+</div>
+
+</body>
+</html>
