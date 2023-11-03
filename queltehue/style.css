@@ -1,0 +1,86 @@
+/* Cada zona tiene 5mts de largo y de ancho */
+/* La escala utilizada es 6 veces mayor, 5 a 30 */
+
+.lotes {
+    display: inline-block;
+}
+
+.lote_09 {
+    width: 204px;
+    height: 455px;
+    background-color: #951;
+}
+
+.lote_10 {
+    width: 204px;
+    height: 455px;
+    background-color: #951;
+}
+
+/*
+.filas {
+    width: 198px;
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 3px;
+    background-color: black;
+    display: inline-block;
+}
+*/
+
+.zona1 {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #fff;
+    margin: 0.5px 0.5px;
+}
+
+.zona2 {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #1a1;
+    margin: 0.5px 0.5px;
+} 
+
+.zona3 {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #3af;
+    margin: 0.5px 0.5px;
+}
+
+.zona4 {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #000;
+    margin: 0.5px 0.5px;
+}
+
+
+.luca {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #f11;
+    margin: 0.5px 0.5px;
+}
+
+.pablo {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #11f;
+    margin: 0.5px 0.5px;
+}
+
+.reserva {
+    width: 28px;
+    height: 30px;
+    display: inline-block;
+    background-color: #999;
+    margin: 0.5px 0.5px;
+}
