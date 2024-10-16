@@ -1,9 +1,181 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>NIDO</title>
+<html lang="es">
+
+
+<head> <!-- COPIADO TAL CUAL DEL INDEX  / 20241016 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width:device-width, initial-scale:1.0">
+    <title>Curriculum Vitae</title>
+    <!-- IMPORTACION DEFINITIVA -->
+    <!-- Alejandro Ruiz De Prada - ruizdalejandro@gmail.com -->
+    <!-- General Rodriguez, Buenos Aires - Argentina (Enero, 2023) -->
+    <link rel="stylesheet" type="text/css" href="index-style.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <!-- ICONOS -->
+    <script src="https://kit.fontawesome.com/aa3ecc03ff.js" crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Oswald:wght@200&display=swap" rel="stylesheet"> 
+
+    <!-- NAV + RESPONSIVE NAV -->
+    <style>
+        a {text-decoration: none; color:black;}
+        a:visited {color:black;}
+        a:hover {color:gray;} 
+        
+        .nav__responsive-ul {
+            display: none;
+        }
+
+        .nav {
+            background: rgb(0, 100, 0);
+        }
+
+        .nav__li {
+            display: inline-block;
+            padding: 12px;
+            color: #fff;
+        }
+
+        .nav__li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav__li i {
+            box-sizing: border-box;
+            text-align: right;
+            margin-right: 5px;
+        }
+
+        .nav__li:hover {
+            color: #bbb;
+        }
+
+        .nav__li:hover > a {
+            color: #bbb;
+        }
+
+
+        .nav__responsive-button-container {
+            position: absolute;
+            width: 100%;
+            font-size: 25px;
+            background-color: #69c;
+            margin-top: -60px;
+            z-index: 100;
+        }
+
+        .nav__responsive-button {
+            padding: 6px 20px;
+            text-align: right;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 580px) {
+            .nav__ul {
+                display: none;
+            }
+
+            .nav {
+                height: 37px;
+                width: 100%;
+                background-color: #69c;
+            }
+
+            .nav__responsive-ul {
+                display: block;
+                position: absolute;
+                width: 100%;
+                margin-top: 37px;
+                padding-top: 23px;
+                height: 37px;
+            }
+
+            .nav__li-container {
+                position: relative;
+                height: 200px; /*calc(100vh - 37px)*/
+                top: -1000px;
+                background-color: #9bf;
+                transition: all 1s;
+                z-index: 1;
+                /*weith: 75%*/
+            }
+
+            .nav__responsive-li {
+                width: 100%;
+                padding: 9px 20px;
+            }
+
+            .nav__responsive-li i {
+                box-sizing: border-box;
+                text-align: center;
+                margin-right: 5px;
+                width: 30px;
+                color: #016;
+            }
+
+            .nav__responsive-li a {
+                color: #016;
+                text-decoration: none;
+            }
+
+            .nav__responsive-ul:hover > .nav__li-container {
+                top: -23px;
+            }
+
+        }
+    </style>
+
 </head>
 <body>
+    <!-- NAV [ 25/02/2023  ] OPCION 1
+    <header>
+        <nav class="nav">
+            <ul class="nav__ul">
+                <li class="nav__li"><i class="fas fa-house"></i><a href="index.html">Inicio</a></li>
+                <li class="nav__li"><i class="fas fa-user"></i><a href="historia.html">Historia</a></li>
+                <li class="nav__li"><i class="fas fa-circle-info"></i><a href="formacion.html">Formación</a></li>
+                <li class="nav__li"><i class="fas fa-landmark"></i><a href="experiencia.html">Experiencia</a></li>
+                <li class="nav__li"><i class="fas fa-magnifying-glass"></i><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="nav__responsive-ul">
+                <div class="nav__responsive-button-container">
+                <div class="nav__responsive-button"><i class="fas fa-bars"></i></div></div>
+                <div class="nav__li-container">
+                    <li class="nav__responsive-li"><i class="fas fa-house"></i></i><a href="index.html">Inicio</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-user"></i><a href="historia.html">Historia</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-circle-info"></i><a href="formacion.html">Formación</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-landmark"></i><a href="experiencia.html">Experiencia</a></li>
+                    <li class="nav__responsive-li"><i class="fas fa-magnifying-glass"></i><a href="contacto.html">Contacto</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    -->
 
+    <header class="menu"> <!-- [08/03/2023 19:15] -->
+        <div class="barra-lateral">
+            <h1 class="nombre">Alejandro RUIZ DE PRADA</h1>
+            <div class="opciones">
+                <a href="index.html">INICIO</a><br>
+                <a href="biografia.html">BIOGRAFIA</a><br> <!-- [03/03/2023 19:30] -->
+                <!-- <a href="curriculum.html">CURRICULUM</a><br> -->
+                <a href="galeria.html">GALERIA</a><br>
+                <a href="reel.html">REEL</a><br>
+                <a href="contacto.html">CONTACTO</a><br>
+                <br><br><br><br>
+                <a href="nido.html" style="color:#fff">NIDO</a>
+            </div>
+        </div>
+    </header>
+    <diV></diV>
+    
 </body>
 </html>
